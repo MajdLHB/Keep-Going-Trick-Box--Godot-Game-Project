@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bttcswltvrs1c"]
+
+[ext_resource type="Texture2D" uid="uid://bmvtbocx7kbnx" path="res://Images/Clock12.png" id="1_lhfgo"]
+
+[resource]
+albedo_color = Color(0.299547, 0.299547, 0.299547, 0.74902)
+albedo_texture = ExtResource("1_lhfgo")

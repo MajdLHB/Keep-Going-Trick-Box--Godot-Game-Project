@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxma7654cafpi"]
+
+[ext_resource type="Material" uid="uid://dw44bojmeucsk" path="res://Materiels/Ground.tres" id="1_6fxdp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckda1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhw76"]
+material = ExtResource("1_6fxdp")
+
+[node name="Box" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+can_sleep = false
+linear_damp = 1.0
+angular_damp = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ckda1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_yhw76")

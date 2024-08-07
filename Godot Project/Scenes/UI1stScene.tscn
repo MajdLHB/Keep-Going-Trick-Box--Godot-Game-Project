@@ -1,0 +1,266 @@
+[gd_scene load_steps=60 format=3 uid="uid://ghr5f8h3v0nr"]
+
+[ext_resource type="Texture2D" uid="uid://dvhkcs5kas8n8" path="res://Images/UI/continue button.png" id="1_ukbyw"]
+[ext_resource type="Environment" uid="uid://q3hgyleo6eca" path="res://Enviroment/Enviroment.tres" id="1_v7d7x"]
+[ext_resource type="PackedScene" uid="uid://c0yhafp0r7o3i" path="res://Scenes/Player.tscn" id="2_3nn1e"]
+[ext_resource type="Texture2D" uid="uid://lfv57k3c0dv5" path="res://Images/UI/new game button.png" id="2_iomk8"]
+[ext_resource type="Texture2D" uid="uid://d1pk4w0xux728" path="res://Images/UI/options button.png" id="3_t3128"]
+[ext_resource type="Texture2D" uid="uid://cimed13xkhddj" path="res://Images/UI/hovred Continue.png" id="4_688ab"]
+[ext_resource type="Texture2D" uid="uid://dvfeida6dj3yt" path="res://Images/UI/about dev button.png" id="4_bfif2"]
+[ext_resource type="Texture2D" uid="uid://d2mn724pmblyn" path="res://Images/UI/quit button.png" id="5_o2uwe"]
+[ext_resource type="Texture2D" uid="uid://rlbi8gj11rhx" path="res://Images/UI/Pannel.png" id="6_bk5vn"]
+[ext_resource type="Texture2D" uid="uid://bvrl0cbjqiu6b" path="res://Images/UI/pressed continue.png" id="6_lbcjp"]
+[ext_resource type="Texture2D" uid="uid://uhv7x0loed2e" path="res://Images/UI/skin button.png" id="6_xca84"]
+[ext_resource type="Texture2D" uid="uid://ydjf5uj8oooq" path="res://Images/UI/project_logo.png" id="7_fco76"]
+[ext_resource type="StyleBox" path="res://Images/UI/Themes/Disabled.tres" id="7_hrtdn"]
+[ext_resource type="Texture2D" uid="uid://bijv1obl6h8c4" path="res://Images/UI/focus continue.png" id="8_0y7yq"]
+[ext_resource type="Texture2D" uid="uid://j1fia05aynxd" path="res://Images/UI/hovred new game.png" id="8_hlh66"]
+[ext_resource type="Texture2D" uid="uid://cdgwtqxejh5s4" path="res://Images/UI/pressed new game.png" id="9_32j5y"]
+[ext_resource type="Script" path="res://Scripts/UI/Continue.gd" id="9_nxv4x"]
+[ext_resource type="Texture2D" uid="uid://c01jtugx31d7v" path="res://Images/UI/hovred Options.png" id="11_6gn30"]
+[ext_resource type="Texture2D" uid="uid://c0cj64j7cgqd1" path="res://Images/UI/pressed options.png" id="12_3l85a"]
+[ext_resource type="Texture2D" uid="uid://b72kpn13cpipy" path="res://Images/UI/focus new game.png" id="12_mfq5g"]
+[ext_resource type="Script" path="res://Scripts/UI/New Game.gd" id="14_opp1x"]
+[ext_resource type="Texture2D" uid="uid://ctxf4nd2s535o" path="res://Images/UI/hovred about dev.png" id="14_sm2ma"]
+[ext_resource type="Texture2D" uid="uid://cpqbktma0idax" path="res://Images/UI/pressed about dev.png" id="15_mpbbv"]
+[ext_resource type="Texture2D" uid="uid://bmtvbnbxkxi7h" path="res://Images/UI/focus options.png" id="16_rs4dn"]
+[ext_resource type="Texture2D" uid="uid://o4htc1q3ody1" path="res://Images/UI/hovred quit.png" id="17_ocmyk"]
+[ext_resource type="Texture2D" uid="uid://50xgt7gd3cb1" path="res://Images/UI/pressed quit.png" id="18_hvtyd"]
+[ext_resource type="Texture2D" uid="uid://8j6ybpw07v1j" path="res://Images/UI/hovred skin.png" id="20_by87x"]
+[ext_resource type="Texture2D" uid="uid://cf8dplc64eg3n" path="res://Images/UI/focus about dev.png" id="20_c1vmu"]
+[ext_resource type="Texture2D" uid="uid://bwxpiakic84k2" path="res://Images/UI/pressed skin.png" id="21_3b2ub"]
+[ext_resource type="Texture2D" uid="uid://cxuu6yby6tqel" path="res://Images/UI/focus quit.png" id="23_jn0qa"]
+[ext_resource type="Texture2D" uid="uid://d0vdpwnuin7t2" path="res://Images/UI/focus skin.png" id="27_0hos0"]
+[ext_resource type="Script" path="res://Scripts/UI/Quit.gd" id="27_f8ge0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x5gk4"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ga8w2"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="Theme" id="Theme_yyfat"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1f34"]
+texture = ExtResource("1_ukbyw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_guwo0"]
+texture = ExtResource("4_688ab")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mo0fi"]
+texture = ExtResource("6_lbcjp")
+modulate_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tsnft"]
+texture = ExtResource("8_0y7yq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1ctd"]
+texture = ExtResource("2_iomk8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_few2b"]
+texture = ExtResource("8_hlh66")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvptj"]
+texture = ExtResource("9_32j5y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwwpa"]
+texture = ExtResource("12_mfq5g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oh3d5"]
+texture = ExtResource("3_t3128")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fos03"]
+texture = ExtResource("11_6gn30")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6utu"]
+texture = ExtResource("12_3l85a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4gwx"]
+texture = ExtResource("16_rs4dn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q84w8"]
+texture = ExtResource("4_bfif2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7ubs"]
+texture = ExtResource("14_sm2ma")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8jbb"]
+texture = ExtResource("15_mpbbv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52ney"]
+texture = ExtResource("20_c1vmu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ddp0"]
+texture = ExtResource("5_o2uwe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvctv"]
+texture = ExtResource("17_ocmyk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhvax"]
+texture = ExtResource("18_hvtyd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x47nj"]
+texture = ExtResource("23_jn0qa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vnt2x"]
+texture = ExtResource("6_xca84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4txhh"]
+texture = ExtResource("20_by87x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02fld"]
+texture = ExtResource("21_3b2ub")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akg2m"]
+texture = ExtResource("27_0hos0")
+
+[node name="Ui1StScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -5.76453)
+environment = ExtResource("1_v7d7x")
+
+[node name="Background scene" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Background scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.57599, -1.8936)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background scene/StaticBody3D"]
+shape = SubResource("BoxShape3D_x5gk4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background scene/StaticBody3D"]
+mesh = SubResource("BoxMesh_ga8w2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background scene"]
+transform = Transform3D(1, 0, 0, 0, -0.609882, 0.792492, 0, -0.792492, -0.609882, 0.035588, 4.55313, -4.59421)
+
+[node name="Player" parent="Background scene" instance=ExtResource("2_3nn1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.493592, -2.63054)
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+follow_viewport_enabled = true
+
+[node name="Pannel" type="Sprite2D" parent="UI/CanvasLayer"]
+position = Vector2(410, 387)
+scale = Vector2(0.3, -0.3)
+texture = ExtResource("6_bk5vn")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/CanvasLayer"]
+custom_minimum_size = Vector2(335, 131)
+offset_left = 58.0
+offset_top = 228.0
+offset_right = 769.0
+offset_bottom = 629.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(335, 131)
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(335, 131)
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(335, 131)
+layout_mode = 2
+focus_neighbor_right = NodePath("../New Game")
+focus_neighbor_bottom = NodePath("../../VBoxContainer/Options")
+focus_next = NodePath("../New Game")
+theme = SubResource("Theme_yyfat")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g1f34")
+theme_override_styles/hover = SubResource("StyleBoxTexture_guwo0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mo0fi")
+theme_override_styles/disabled = ExtResource("7_hrtdn")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tsnft")
+script = ExtResource("9_nxv4x")
+
+[node name="New Game" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(335, 131)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Continue")
+focus_neighbor_right = NodePath("../../../../HBoxContainer/Skin")
+focus_neighbor_bottom = NodePath("../../VBoxContainer/Options")
+focus_next = NodePath("../../VBoxContainer/Options")
+focus_previous = NodePath("../Continue")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a1ctd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_few2b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lvptj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_iwwpa")
+script = ExtResource("14_opp1x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 131)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer/New Game")
+focus_neighbor_right = NodePath("../../../../HBoxContainer/Skin")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/Quit")
+focus_next = NodePath("../../HBoxContainer2/Quit")
+focus_previous = NodePath("../../HBoxContainer/New Game")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oh3d5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fos03")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w6utu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_m4gwx")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AboutDev" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(335, 131)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../VBoxContainer/Options")
+focus_neighbor_right = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../../VBoxContainer/Options")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q84w8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t7ubs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n8jbb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_52ney")
+
+[node name="Quit" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(335, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../VBoxContainer/Options")
+focus_neighbor_right = NodePath("../../../../HBoxContainer/Skin")
+focus_next = NodePath("../../../../HBoxContainer/Skin")
+focus_previous = NodePath("../AboutDev")
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5ddp0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dvctv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qhvax")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x47nj")
+script = ExtResource("27_f8ge0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -489.0
+offset_top = -204.0
+offset_right = -145.0
+offset_bottom = -73.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Skin" type="Button" parent="UI/CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(335, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer/VBoxContainer/HBoxContainer2/Quit")
+focus_previous = NodePath("../../MarginContainer/VBoxContainer/HBoxContainer2/Quit")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vnt2x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4txhh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_02fld")
+theme_override_styles/focus = SubResource("StyleBoxTexture_akg2m")
+
+[node name="ProjectLogo" type="Sprite2D" parent="UI/CanvasLayer"]
+position = Vector2(414.95, 171)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_fco76")

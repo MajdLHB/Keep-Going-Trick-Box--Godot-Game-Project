@@ -1,0 +1,430 @@
+[gd_scene load_steps=39 format=3 uid="uid://myrktvkbav5q"]
+
+[ext_resource type="PackedScene" uid="uid://c0yhafp0r7o3i" path="res://Scenes/Player.tscn" id="1_nj6ol"]
+[ext_resource type="Material" uid="uid://dw44bojmeucsk" path="res://Materiels/Ground.tres" id="2_4hggq"]
+[ext_resource type="Environment" uid="uid://q3hgyleo6eca" path="res://Enviroment/Enviroment.tres" id="3_07rfu"]
+[ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="4_akax4"]
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="5_iy4o6"]
+[ext_resource type="Script" path="res://Scripts/WinTheLevel.gd" id="6_s4157"]
+[ext_resource type="Material" uid="uid://d14aikpyn3pp8" path="res://Materiels/Button3.tres" id="7_lt3rk"]
+[ext_resource type="Material" uid="uid://dssnia4ry5pv5" path="res://Materiels/Button2.tres" id="8_oi8yp"]
+[ext_resource type="Material" uid="uid://d4x8ugye30ah" path="res://Materiels/Button1.tres" id="9_5r74g"]
+[ext_resource type="Material" uid="uid://dg2vm8fhd5r74" path="res://Materiels/box1.tres" id="10_5wjsy"]
+[ext_resource type="Material" uid="uid://bttcswltvrs1c" path="res://Materiels/box2.tres" id="11_sn5gs"]
+[ext_resource type="Material" uid="uid://cpv5f47o6kbpg" path="res://Materiels/box3.tres" id="12_ftnlb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dc1ei"]
+material = ExtResource("2_4hggq")
+size = Vector3(10.5, 0.5, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3cfe"]
+size = Vector3(10, 0.5, 15)
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_a4rvf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_emwl0"]
+size = Vector3(3, 0.2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgjxb"]
+size = Vector3(3, 0.2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hkx3i"]
+material = ExtResource("2_4hggq")
+size = Vector3(3.825, 3.46, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i052s"]
+size = Vector3(3.825, 3.46, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n3lm5"]
+size = Vector3(3.035, 0.715, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5tvm"]
+material = ExtResource("2_4hggq")
+size = Vector3(3.035, 0.715, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rerjt"]
+size = Vector3(3, 0.2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0gjcc"]
+size = Vector3(3, 0.2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tx43"]
+size = Vector3(3, 50, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_amjsp"]
+size = Vector3(3, 50, 50)
+
+[sub_resource type="GDScript" id="GDScript_j6jd4"]
+resource_name = "Buttons"
+script/source = "extends Node3D
+
+# Creating Signals to talk with the door
+signal OpenDoor
+signal CloseDoor
+
+#Button 1:
+var initial_position1 
+var ObjectsInTheArea1 = 0
+var Pressed_Position1
+var B1 = false
+#Button 2:
+var initial_position2 
+var ObjectsInTheArea2 = 0
+var Pressed_Position2
+var B2 = false
+#Button 3:
+var initial_position3
+var ObjectsInTheArea3 = 0
+var Pressed_Position3
+var B3 = false
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#button1:
+	initial_position1 = $Button1/MeshB1.transform.origin
+	Pressed_Position1 = initial_position1 + Vector3(0, -0.2, 0)
+	$Button1/AreaB1.connect(\"body_entered\", Callable( self, \"_OnArea1Entered\"))
+	$Button1/AreaB1.connect(\"body_exited\", Callable(self, \"_OnArea1Exited\"))
+	#button2:
+	initial_position2 = $Button2/MeshB2.transform.origin
+	Pressed_Position2 = initial_position2 + Vector3(0, -0.2, 0)
+	$Button2/AreaB2.connect(\"body_entered\", Callable( self, \"_OnArea2Entered\"))
+	$Button2/AreaB2.connect(\"body_exited\", Callable(self, \"_OnArea2Exited\"))
+	#button3:
+	initial_position3 = $Button3/MeshB3.transform.origin
+	Pressed_Position3 = initial_position3 + Vector3(0, -0.2, 0)
+	$Button3/AreaB3.connect(\"body_entered\", Callable( self, \"_OnArea3Entered\"))
+	$Button3/AreaB3.connect(\"body_exited\", Callable(self, \"_OnArea3Exited\"))
+
+	
+# Called when an object enters the area
+func _OnArea1Entered(area):
+	ObjectsInTheArea1 += 1
+	if ObjectsInTheArea1 == 0:
+		$Button1/MeshB1.transform.origin = initial_position1
+		emit_signal(\"CloseDoor\")
+	elif ObjectsInTheArea1 > 0:
+		$Button1/MeshB1.transform.origin = Pressed_Position1
+	if area.name == \"Box3\":
+		B1 = true
+
+# Called when an object exits the area
+func _OnArea1Exited(area):
+	ObjectsInTheArea1 -= 1
+	if ObjectsInTheArea1 == 0:
+		$Button1/MeshB1.transform.origin = initial_position1
+		emit_signal(\"CloseDoor\")
+	elif ObjectsInTheArea1 > 0:
+		$Button1/MeshB1.transform.origin = Pressed_Position1
+		if area.name == \"Box3\":
+			B1 = false
+	
+
+func _OnArea2Entered(area):
+	ObjectsInTheArea2 += 1
+	if ObjectsInTheArea2 == 0:
+		$Button2/MeshB2.transform.origin = initial_position2
+		emit_signal(\"CloseDoor\")
+	elif ObjectsInTheArea2 > 0:
+		$Button2/MeshB2.transform.origin = Pressed_Position2
+	if area.name == \"Box1\":
+		B2 = true
+
+# Called when an object exits the area
+func _OnArea2Exited(area):
+	ObjectsInTheArea2 -= 1
+	if ObjectsInTheArea2 == 0:
+		$Button2/MeshB2.transform.origin = initial_position2
+		emit_signal(\"CloseDoor\")
+	elif ObjectsInTheArea2 > 0:
+		$Button2/MeshB2.transform.origin = Pressed_Position2
+		if area.name == \"Box1\":
+			B2 = false
+
+func _OnArea3Entered(area):
+	ObjectsInTheArea3 += 1
+	if ObjectsInTheArea3 == 0:
+		$Button3/MeshB3.transform.origin = initial_position3
+		emit_signal(\"CloseDoor\")
+	elif ObjectsInTheArea3 > 0:
+		$Button3/MeshB3.transform.origin = Pressed_Position3
+	if area.name == \"Box2\":
+		B3 = true
+
+# Called when an object exits the area
+func _OnArea3Exited(area):
+	ObjectsInTheArea3 -= 1
+	if ObjectsInTheArea3 == 0:
+		$Button3/MeshB3.transform.origin = initial_position3
+		emit_signal(\"CloseDoor\")
+	elif ObjectsInTheArea3 > 0:
+		$Button3/MeshB3.transform.origin = Pressed_Position3
+		if area.name == \"Box2\":
+			B3 = false
+
+
+
+
+
+func _physics_process(delta):
+	if B1 and B2 and B3:
+		emit_signal(\"OpenDoor\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kwxh2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yvkhd"]
+material = ExtResource("7_lt3rk")
+size = Vector3(1, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_erf68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jy0ay"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_46ve1"]
+material = SubResource("StandardMaterial3D_jy0ay")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gt15s"]
+material = ExtResource("8_oi8yp")
+size = Vector3(1, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_psn33"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iy2yj"]
+material = ExtResource("10_5wjsy")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nasdp"]
+material = ExtResource("11_sn5gs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7i46s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cnouk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_am076"]
+material = ExtResource("12_ftnlb")
+
+[node name="Level2" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nj6ol")]
+transform = Transform3D(-0.99996, -0.00134355, -0.00885479, -0.00138638, 0.999987, 0.00483248, 0.00884818, 0.00484458, -0.999949, 0, 15.0963, -1.327)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182289, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245557, -4.76837e-07, 0.0470114)
+mesh = SubResource("BoxMesh_dc1ei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_p3cfe")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, -2.31116e-15, 6.61906e-08, 0.757132, 0.653262, 5.711e-08, 0.653262, -0.757132, 0, 10.8818, -8.358)
+light_energy = 3.825
+light_indirect_energy = 4.006
+light_volumetric_fog_energy = 11.473
+light_angular_distance = 4.37
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.124
+directional_shadow_fade_start = 0.152
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(-1, 1.06581e-14, 8.74228e-08, 2.74472e-08, 0.949436, 0.313959, -8.30024e-08, 0.313959, -0.949437, 0, 17.2403, -7.597)
+top_level = true
+environment = ExtResource("3_07rfu")
+attributes = SubResource("CameraAttributesPhysical_a4rvf")
+v_offset = 0.29
+current = true
+script = ExtResource("4_akax4")
+target = NodePath("../Player")
+
+[node name="Door" type="StaticBody3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0969969, 2.78766, 7.19964)
+script = ExtResource("5_iy4o6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63392, 0.0663633, 0)
+mesh = SubResource("BoxMesh_emwl0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.634, 0.066, -1.49012e-08)
+shape = SubResource("BoxShape3D_sgjxb")
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182289, 0, 0)
+
+[node name="Wall1" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.821287, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08026, 2.44157, 7.26853)
+mesh = SubResource("BoxMesh_hkx3i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.135, 2.477, 7.269)
+shape = SubResource("BoxShape3D_i052s")
+
+[node name="Wall2" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8352, -0.78565, 0.00390291)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23849, 2.41959, 7.26853)
+mesh = SubResource("BoxMesh_hkx3i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.135, 2.477, 7.269)
+shape = SubResource("BoxShape3D_i052s")
+
+[node name="Wall3" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24025, 3.15726, 7.50541)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037, -0.156, -0.232)
+shape = SubResource("BoxShape3D_n3lm5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0365826, -0.156414, -0.231917)
+mesh = SubResource("BoxMesh_t5tvm")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.097, 2.788, 7.2)
+script = ExtResource("6_s4157")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.634, 0.06, 0)
+shape = SubResource("BoxShape3D_rerjt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.634, 0.06, 0)
+visible = false
+mesh = SubResource("BoxMesh_0gjcc")
+
+[node name="Area3D" type="Area3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6023, -6.7336, 0.0342181)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/Area3D"]
+shape = SubResource("BoxShape3D_8tx43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D/Area3D"]
+visible = false
+mesh = SubResource("BoxMesh_amjsp")
+
+[node name="Buttons" type="Node3D" parent="."]
+script = SubResource("GDScript_j6jd4")
+
+[node name="Button1" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58501, 1.684, 2.98926)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Button1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.45477, 0)
+shape = SubResource("BoxShape3D_kwxh2")
+
+[node name="MeshB1" type="MeshInstance3D" parent="Buttons/Button1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35232, 0)
+mesh = SubResource("BoxMesh_yvkhd")
+skeleton = NodePath("")
+
+[node name="AreaB1" type="Area3D" parent="Buttons/Button1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031538, -0.835196, 0.007092)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Button1/AreaB1"]
+shape = SubResource("BoxShape3D_erf68")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Button1/AreaB1"]
+visible = false
+mesh = SubResource("BoxMesh_46ve1")
+
+[node name="Button2" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.684, 2.98926)
+
+[node name="MeshB2" type="MeshInstance3D" parent="Buttons/Button2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.352, 0)
+mesh = SubResource("BoxMesh_gt15s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Button2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.45477, 0)
+shape = SubResource("BoxShape3D_kwxh2")
+
+[node name="AreaB2" type="Area3D" parent="Buttons/Button2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031538, -0.835196, 0.007092)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Button2/AreaB2"]
+shape = SubResource("BoxShape3D_erf68")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Button2/AreaB2"]
+visible = false
+mesh = SubResource("BoxMesh_46ve1")
+
+[node name="Button3" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64195, 1.684, 2.98926)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Button3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.45477, 0)
+shape = SubResource("BoxShape3D_kwxh2")
+
+[node name="MeshB3" type="MeshInstance3D" parent="Buttons/Button3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35232, 0)
+material_override = ExtResource("9_5r74g")
+mesh = SubResource("BoxMesh_yvkhd")
+skeleton = NodePath("")
+
+[node name="AreaB3" type="Area3D" parent="Buttons/Button3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031538, -0.835196, 0.007092)
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Button3/AreaB3"]
+shape = SubResource("BoxShape3D_erf68")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Button3/AreaB3"]
+visible = false
+mesh = SubResource("BoxMesh_46ve1")
+
+[node name="Boxes" type="Node3D" parent="."]
+
+[node name="Box1" type="RigidBody3D" parent="Boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68406, 0.763713, 0)
+collision_layer = 2
+collision_mask = 3
+mass = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box1"]
+shape = SubResource("BoxShape3D_psn33")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/Box1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013957, 0, 0.00222015)
+mesh = SubResource("BoxMesh_iy2yj")
+
+[node name="Box2" type="RigidBody3D" parent="Boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.267269, 0.88335, 0)
+collision_layer = 2
+collision_mask = 3
+mass = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/Box2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329369, -0.117909, 0)
+mesh = SubResource("BoxMesh_nasdp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box2"]
+shape = SubResource("BoxShape3D_7i46s")
+
+[node name="Box3" type="RigidBody3D" parent="Boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66657, 0.808529, 0.0067687)
+collision_layer = 2
+collision_mask = 3
+mass = 25.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/Box3"]
+shape = SubResource("BoxShape3D_cnouk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/Box3"]
+mesh = SubResource("BoxMesh_am076")
+
+[connection signal="CloseDoor" from="Buttons" to="Door" method="Close_Door"]
+[connection signal="OpenDoor" from="Buttons" to="Door" method="Open_Door"]

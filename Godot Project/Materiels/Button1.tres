@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d4x8ugye30ah"]
+
+[ext_resource type="Texture2D" uid="uid://ckpv6kjuyl23p" path="res://Images/Day.png" id="1_4gnn3"]
+
+[resource]
+albedo_color = Color(0.323707, 0.993698, 0.336401, 0.494118)
+albedo_texture = ExtResource("1_4gnn3")

@@ -1,0 +1,20 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://q3hgyleo6eca"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_je4wo"]
+
+[sub_resource type="Sky" id="Sky_g1aac"]
+sky_material = SubResource("PhysicalSkyMaterial_je4wo")
+process_mode = 1
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_g1aac")
+sky_custom_fov = 37.0
+ambient_light_source = 3
+ambient_light_color = Color(0.829836, 0.864863, 0.989933, 1)
+ssr_fade_in = 0.3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.008
+volumetric_fog_albedo = Color(0.564341, 0.60451, 0.63085, 1)
+volumetric_fog_emission = Color(0.646029, 0.646029, 0.646029, 1)
+volumetric_fog_emission_energy = 5.0
