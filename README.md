@@ -25,10 +25,14 @@ Instructions for installing and running the game will be provided once the game 
 ## Screenshots
 *(Add your screenshots here)*
 
-![Screenshot 1](![image](https://github.com/user-attachments/assets/9231479e-312f-488b-a79e-da5c2c15bfe5))
-![Screenshot 2](![image](https://github.com/user-attachments/assets/bbf1490b-70bf-4fb4-ae38-bf345a9e1032))
-![Screenshot 3](![image](https://github.com/user-attachments/assets/816a99ef-8a7c-4c00-92e6-c16c333b9b52))
-![Screenshot 4](![image](https://github.com/user-attachments/assets/2f54f287-7e01-44bb-a676-2ea81c724c3f))
+![Screenshot 1](![image](https://github.com/user-attachments/assets/9231479e-312f-488b-a79e-da5c2c15bfe5)
+)
+![Screenshot 2](![image](https://github.com/user-attachments/assets/bbf1490b-70bf-4fb4-ae38-bf345a9e1032)
+)
+![Screenshot 3](![image](https://github.com/user-attachments/assets/816a99ef-8a7c-4c00-92e6-c16c333b9b52)
+)
+![Screenshot 4](![image](https://github.com/user-attachments/assets/2f54f287-7e01-44bb-a676-2ea81c724c3f)
+)
 
 ## Contributing
 Contributions are welcome! Feel free to fork this repository and submit pull requests.
