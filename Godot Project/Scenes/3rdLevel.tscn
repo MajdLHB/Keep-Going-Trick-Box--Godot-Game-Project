@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cf3sv13smc6v1"]
+[gd_scene load_steps=28 format=3 uid="uid://cf3sv13smc6v1"]
 
 [ext_resource type="PackedScene" uid="uid://c0yhafp0r7o3i" path="res://Scenes/Player.tscn" id="1_o1www"]
 [ext_resource type="Material" uid="uid://dw44bojmeucsk" path="res://Materiels/Ground.tres" id="2_2ue3k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="4_gp6vu"]
 [ext_resource type="Script" path="res://Scripts/Buttons.gd" id="4_vwj73"]
 [ext_resource type="PackedScene" uid="uid://e7tn286xva6" path="res://Scenes/display_level.tscn" id="8_cv3so"]
+[ext_resource type="PackedScene" uid="uid://cv2v78jjv682n" path="res://Scenes/pause_menu.tscn" id="8_fcvh8"]
 [ext_resource type="Script" path="res://Scripts/WinTheLevel.gd" id="8_qush2"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_a4rvf"]
@@ -275,3 +276,5 @@ visible = false
 mesh = SubResource("BoxMesh_amjsp")
 
 [node name="Display Level" parent="." instance=ExtResource("8_cv3so")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_fcvh8")]

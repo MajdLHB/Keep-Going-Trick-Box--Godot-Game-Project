@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://ghr5f8h3v0nr"]
+[gd_scene load_steps=81 format=3 uid="uid://ghr5f8h3v0nr"]
 
 [ext_resource type="Texture2D" uid="uid://dvhkcs5kas8n8" path="res://Images/UI/continue button.png" id="1_ukbyw"]
 [ext_resource type="Environment" uid="uid://q3hgyleo6eca" path="res://Enviroment/Enviroment.tres" id="1_v7d7x"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bvrl0cbjqiu6b" path="res://Images/UI/pressed continue.png" id="6_lbcjp"]
 [ext_resource type="Texture2D" uid="uid://uhv7x0loed2e" path="res://Images/UI/skin button.png" id="6_xca84"]
 [ext_resource type="Texture2D" uid="uid://ydjf5uj8oooq" path="res://Images/UI/project_logo.png" id="7_fco76"]
-[ext_resource type="StyleBox" path="res://Images/UI/Themes/Disabled.tres" id="7_hrtdn"]
+[ext_resource type="StyleBox" uid="uid://c3bwguo0lxx6f" path="res://Images/UI/Themes/Disabled.tres" id="7_hrtdn"]
 [ext_resource type="Texture2D" uid="uid://bijv1obl6h8c4" path="res://Images/UI/focus continue.png" id="8_0y7yq"]
 [ext_resource type="Texture2D" uid="uid://j1fia05aynxd" path="res://Images/UI/hovred new game.png" id="8_hlh66"]
 [ext_resource type="Texture2D" uid="uid://cdgwtqxejh5s4" path="res://Images/UI/pressed new game.png" id="9_32j5y"]
@@ -29,9 +29,17 @@
 [ext_resource type="Texture2D" uid="uid://8j6ybpw07v1j" path="res://Images/UI/hovred skin.png" id="20_by87x"]
 [ext_resource type="Texture2D" uid="uid://cf8dplc64eg3n" path="res://Images/UI/focus about dev.png" id="20_c1vmu"]
 [ext_resource type="Texture2D" uid="uid://bwxpiakic84k2" path="res://Images/UI/pressed skin.png" id="21_3b2ub"]
+[ext_resource type="Script" path="res://Scripts/UI/AboutDev.gd" id="23_6n15o"]
 [ext_resource type="Texture2D" uid="uid://cxuu6yby6tqel" path="res://Images/UI/focus quit.png" id="23_jn0qa"]
 [ext_resource type="Texture2D" uid="uid://d0vdpwnuin7t2" path="res://Images/UI/focus skin.png" id="27_0hos0"]
 [ext_resource type="Script" path="res://Scripts/UI/Quit.gd" id="27_f8ge0"]
+[ext_resource type="Texture2D" uid="uid://4rc0pwcobt2v" path="res://Images/UI/about dev/Pannel.png" id="34_kfi7p"]
+[ext_resource type="Texture2D" uid="uid://dfdwtk701vbw0" path="res://Images/UI/about dev/exit.png" id="35_tlsa5"]
+[ext_resource type="Texture2D" uid="uid://x6fybhbem16n" path="res://Images/UI/about dev/Hovred exit.png" id="36_chs54"]
+[ext_resource type="Texture2D" uid="uid://bu6w5w2jmd8b5" path="res://Images/UI/about dev/Developer.png" id="37_7p15u"]
+[ext_resource type="Texture2D" uid="uid://cvmrimevrvr6l" path="res://Images/UI/about dev/Hovred developer.png" id="38_hruud"]
+[ext_resource type="Texture2D" uid="uid://bgdnh6h55p2nt" path="res://Images/UI/about dev/Game Project.png" id="39_sp8aa"]
+[ext_resource type="Texture2D" uid="uid://b3blwhsj2hlwk" path="res://Images/UI/about dev/Hovred Game project.png" id="40_5q3td"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5gk4"]
 size = Vector3(10, 1, 10)
@@ -113,6 +121,56 @@ texture = ExtResource("21_3b2ub")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akg2m"]
 texture = ExtResource("27_0hos0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08dr6"]
+texture = ExtResource("35_tlsa5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpmju"]
+texture = ExtResource("36_chs54")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3x83"]
+texture = ExtResource("35_tlsa5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b2axp"]
+texture = ExtResource("36_chs54")
+
+[sub_resource type="GDScript" id="GDScript_ndlxl"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.connect(\"pressed\", Callable(self, \"OnPressed\"))
+
+
+func OnPressed():
+	$\"..\".visible = false
+	$\"../../MarginContainer/VBoxContainer/HBoxContainer/New Game\".grab_focus()
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6wfs"]
+texture = ExtResource("37_7p15u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvvlk"]
+texture = ExtResource("38_hruud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lwbub"]
+texture = ExtResource("37_7p15u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_757iy"]
+texture = ExtResource("38_hruud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua0a5"]
+texture = ExtResource("39_sp8aa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwb76"]
+texture = ExtResource("40_5q3td")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kfoor"]
+texture = ExtResource("37_7p15u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otgj8"]
+texture = ExtResource("40_5q3td")
 
 [node name="Ui1StScene" type="Node3D"]
 
@@ -222,6 +280,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_q84w8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t7ubs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n8jbb")
 theme_override_styles/focus = SubResource("StyleBoxTexture_52ney")
+script = ExtResource("23_6n15o")
 
 [node name="Quit" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(335, 0)
@@ -264,3 +323,50 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_akg2m")
 position = Vector2(414.95, 171)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_fco76")
+
+[node name="Pannel2" type="Sprite2D" parent="UI/CanvasLayer"]
+position = Vector2(926, 526)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("34_kfi7p")
+
+[node name="Exit" type="Button" parent="UI/CanvasLayer/Pannel2"]
+custom_minimum_size = Vector2(150, 150)
+offset_left = 1162.0
+offset_top = -860.0
+offset_right = 1312.0
+offset_bottom = -710.0
+focus_neighbor_bottom = NodePath("../Developer")
+focus_next = NodePath("../Developer")
+theme_override_styles/normal = SubResource("StyleBoxTexture_08dr6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wpmju")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k3x83")
+theme_override_styles/focus = SubResource("StyleBoxTexture_b2axp")
+script = SubResource("GDScript_ndlxl")
+
+[node name="Developer" type="Button" parent="UI/CanvasLayer/Pannel2"]
+custom_minimum_size = Vector2(2800, 230)
+offset_left = -1460.0
+offset_top = -548.0
+offset_right = 1340.0
+offset_bottom = -318.0
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../GameProject")
+focus_next = NodePath("../GameProject")
+focus_previous = NodePath("../Exit")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6wfs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mvvlk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lwbub")
+theme_override_styles/focus = SubResource("StyleBoxTexture_757iy")
+
+[node name="GameProject" type="Button" parent="UI/CanvasLayer/Pannel2"]
+custom_minimum_size = Vector2(2800, 230)
+offset_left = -1470.0
+offset_top = 20.0
+offset_right = 1330.0
+offset_bottom = 250.0
+focus_neighbor_top = NodePath("../Developer")
+focus_previous = NodePath("../Developer")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ua0a5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fwb76")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfoor")
+theme_override_styles/focus = SubResource("StyleBoxTexture_otgj8")

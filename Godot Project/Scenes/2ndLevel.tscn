@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://myrktvkbav5q"]
+[gd_scene load_steps=41 format=3 uid="uid://myrktvkbav5q"]
 
 [ext_resource type="PackedScene" uid="uid://c0yhafp0r7o3i" path="res://Scenes/Player.tscn" id="1_nj6ol"]
 [ext_resource type="Material" uid="uid://dw44bojmeucsk" path="res://Materiels/Ground.tres" id="2_4hggq"]
@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://bttcswltvrs1c" path="res://Materiels/box2.tres" id="11_sn5gs"]
 [ext_resource type="Material" uid="uid://cpv5f47o6kbpg" path="res://Materiels/box3.tres" id="12_ftnlb"]
 [ext_resource type="PackedScene" uid="uid://e7tn286xva6" path="res://Scenes/display_level.tscn" id="14_k84l8"]
+[ext_resource type="PackedScene" uid="uid://cv2v78jjv682n" path="res://Scenes/pause_menu.tscn" id="15_6pkqo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dc1ei"]
 material = ExtResource("2_4hggq")
@@ -321,6 +322,8 @@ shape = SubResource("BoxShape3D_cnouk")
 mesh = SubResource("BoxMesh_am076")
 
 [node name="Display Level" parent="." instance=ExtResource("14_k84l8")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("15_6pkqo")]
 
 [connection signal="CloseDoor" from="Buttons" to="Door" method="Close_Door"]
 [connection signal="OpenDoor" from="Buttons" to="Door" method="Open_Door"]

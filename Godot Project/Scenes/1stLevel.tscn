@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bfkr0q6e0x8nu"]
+[gd_scene load_steps=37 format=3 uid="uid://bfkr0q6e0x8nu"]
 
 [ext_resource type="PackedScene" uid="uid://c0yhafp0r7o3i" path="res://Scenes/Player.tscn" id="1_o1www"]
 [ext_resource type="Material" uid="uid://dw44bojmeucsk" path="res://Materiels/Ground.tres" id="2_2ue3k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://do4tqsh8dtwcf" path="res://Images/UI/LEVEL DISPLAY.png" id="9_44hn3"]
 [ext_resource type="Script" path="res://Scripts/LevelTracker/Level1Tracker.gd" id="9_s53m6"]
 [ext_resource type="FontFile" uid="uid://c8xu7afu4hwpp" path="res://Fonts/ADLaMDisplay-Regular.ttf" id="10_0y4my"]
+[ext_resource type="PackedScene" uid="uid://cv2v78jjv682n" path="res://Scenes/pause_menu.tscn" id="12_iefim"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dc1ei"]
 material = ExtResource("2_2ue3k")
@@ -326,6 +327,8 @@ label_settings = SubResource("LabelSettings_4neve")
 libraries = {
 "": SubResource("AnimationLibrary_jvvgu")
 }
+
+[node name="PauseMenu" parent="." instance=ExtResource("12_iefim")]
 
 [connection signal="CloseDoor" from="Button" to="Door" method="Close_Door"]
 [connection signal="OpenDoor" from="Button" to="Door" method="Open_Door"]
