@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dk0bn2eb5rfnn"]
+
+[ext_resource type="Texture2D" uid="uid://b1lpl6r0yveoh" path="res://Images/UI/Options/Hovred control settings.png" id="1_7ul0r"]
+
+[resource]
+texture = ExtResource("1_7ul0r")

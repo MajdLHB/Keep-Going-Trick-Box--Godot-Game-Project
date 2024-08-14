@@ -17,5 +17,7 @@ func _process(delta):
 	if SaveManager.SavedGame:
 		_EnableButton()
 
+
 func OnPressed():
-	SceneManager._Load(SaveManager.Level)
+	if Variables.Activate_button == true:
+		SceneManager._Load(SaveManager.Level)

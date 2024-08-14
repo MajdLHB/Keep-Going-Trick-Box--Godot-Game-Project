@@ -1,29 +1,28 @@
-[gd_scene load_steps=34 format=3 uid="uid://cv2v78jjv682n"]
+[gd_scene load_steps=31 format=3 uid="uid://cv2v78jjv682n"]
 
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="1_ae8qs"]
 [ext_resource type="Texture2D" uid="uid://dyp15itub6lwt" path="res://Images/UI/Pause Menu/BG.png" id="2_kd2u1"]
 [ext_resource type="Texture2D" uid="uid://clyprdqhro1rg" path="res://Images/UI/Pause Menu/Buttons/Continue.png" id="3_kj5eq"]
 [ext_resource type="Texture2D" uid="uid://dg8clasr6s8mh" path="res://Images/UI/Pause Menu/Buttons/Hovred Continue.png" id="4_pg52t"]
+[ext_resource type="StyleBox" uid="uid://bceveh0lb24ii" path="res://Images/UI/Themes/pause_menu.tres" id="5_364em"]
 [ext_resource type="Texture2D" uid="uid://bc251kjv2vmqt" path="res://Images/UI/Pause Menu/Buttons/Options.png" id="5_kucmv"]
 [ext_resource type="Texture2D" uid="uid://20m7ctm1uhtv" path="res://Images/UI/Pause Menu/Buttons/Hovred Options.png" id="6_3k5wf"]
 [ext_resource type="Texture2D" uid="uid://bt3bx54f538nv" path="res://Images/UI/Pause Menu/Buttons/Main Menu.png" id="7_kcyoh"]
+[ext_resource type="Script" path="res://Scripts/Options pause menu.gd" id="7_x2wxl"]
 [ext_resource type="Texture2D" uid="uid://btc5n2fuvoawb" path="res://Images/UI/Pause Menu/Buttons/Hovred Main Menu.png" id="8_lygci"]
 [ext_resource type="Texture2D" uid="uid://caf42bb1qgpr4" path="res://Images/UI/Pause Menu/Buttons/Quit.png" id="9_bci7m"]
 [ext_resource type="Texture2D" uid="uid://bix1v2665p65g" path="res://Images/UI/Pause Menu/Buttons/Hovred Quit.png" id="10_k6elp"]
 [ext_resource type="Script" path="res://Scripts/UI/Quit.gd" id="11_h5dpo"]
+[ext_resource type="PackedScene" uid="uid://cianckgi7rfrd" path="res://Scenes/Optiona.tscn" id="13_oscqw"]
 
-[sub_resource type="Theme" id="Theme_mvhyb"]
+[sub_resource type="Theme" id="Theme_5xjoo"]
+Button/styles/hover = null
+Button/styles/pressed = null
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lcgt2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1r1at"]
 texture = ExtResource("3_kj5eq")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lf0f4"]
-texture = ExtResource("4_pg52t")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_atw7t"]
-texture = ExtResource("4_pg52t")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fdu3"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wojj4"]
 texture = ExtResource("4_pg52t")
 
 [sub_resource type="GDScript" id="GDScript_o0vhm"]
@@ -41,6 +40,15 @@ func OnPressed():
 		Engine.time_scale = 0.0  
 	else:
 		Engine.time_scale = 1.0  
+
+	if Input.is_action_just_pressed(\"Back\"):
+		if $\"../../..\".Pressed  == true:
+			$\"../../..\".Pressed = not $\"../../..\".Pressed  
+			$\"../..\".visible = $\"../../..\".Pressed 
+			if $\"../../..\".Pressed:
+				Engine.time_scale = 0.0  
+			else:
+				Engine.time_scale = 1.0  
 "
 
 [sub_resource type="Theme" id="Theme_s4pbw"]
@@ -54,21 +62,12 @@ texture = ExtResource("6_3k5wf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4j3x"]
 texture = ExtResource("6_3k5wf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lb56x"]
-texture = ExtResource("6_3k5wf")
-
 [sub_resource type="Theme" id="Theme_cswj4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v01em"]
 texture = ExtResource("7_kcyoh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_domkh"]
-texture = ExtResource("8_lygci")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_544re"]
-texture = ExtResource("6_3k5wf")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uuof"]
 texture = ExtResource("8_lygci")
 
 [sub_resource type="GDScript" id="GDScript_gmw8e"]
@@ -95,9 +94,6 @@ texture = ExtResource("10_k6elp")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6yot"]
 texture = ExtResource("10_k6elp")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpd70"]
-texture = ExtResource("10_k6elp")
-
 [node name="PauseMenu" type="Node2D"]
 script = ExtResource("1_ae8qs")
 
@@ -107,9 +103,9 @@ script = ExtResource("1_ae8qs")
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 161.0
+offset_left = 117.0
 offset_top = -172.0
-offset_right = 611.0
+offset_right = 567.0
 offset_bottom = 240.0
 grow_vertical = 2
 
@@ -122,11 +118,11 @@ custom_minimum_size = Vector2(450, 100)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Options")
 focus_next = NodePath("../Options")
-theme = SubResource("Theme_mvhyb")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lcgt2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_lf0f4")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_atw7t")
-theme_override_styles/focus = SubResource("StyleBoxTexture_0fdu3")
+theme = SubResource("Theme_5xjoo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1r1at")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wojj4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wojj4")
+theme_override_styles/focus = ExtResource("5_364em")
 script = SubResource("GDScript_o0vhm")
 
 [node name="Options" type="Button" parent="CanvasLayer/VBoxContainer"]
@@ -140,7 +136,8 @@ theme = SubResource("Theme_s4pbw")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pbb4f")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0b7hs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w4j3x")
-theme_override_styles/focus = SubResource("StyleBoxTexture_lb56x")
+theme_override_styles/focus = ExtResource("5_364em")
+script = ExtResource("7_x2wxl")
 
 [node name="Main Menu" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -152,8 +149,8 @@ focus_previous = NodePath("../Options")
 theme = SubResource("Theme_cswj4")
 theme_override_styles/normal = SubResource("StyleBoxTexture_v01em")
 theme_override_styles/hover = SubResource("StyleBoxTexture_domkh")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_544re")
-theme_override_styles/focus = SubResource("StyleBoxTexture_2uuof")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_domkh")
+theme_override_styles/focus = ExtResource("5_364em")
 script = SubResource("GDScript_gmw8e")
 
 [node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
@@ -165,5 +162,15 @@ theme = SubResource("Theme_4731r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qiqpl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mlvvh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t6yot")
-theme_override_styles/focus = SubResource("StyleBoxTexture_rpd70")
+theme_override_styles/focus = ExtResource("5_364em")
 script = ExtResource("11_h5dpo")
+
+[node name="VBoxContainer2" parent="CanvasLayer" instance=ExtResource("13_oscqw")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = -232.0
+offset_right = 1301.0
+offset_bottom = 308.0
+grow_vertical = 2

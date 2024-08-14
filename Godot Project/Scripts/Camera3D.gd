@@ -15,7 +15,7 @@ func _process(delta):
 	if target.global_transform.origin.y > 0.1:
 		smoothing_speed = 5.0
 	elif target.global_transform.origin.y < 0:
-		smoothing_speed = 50.0
+		smoothing_speed = 10.0
 		
 	if target:
 		# Calculate the desired position
