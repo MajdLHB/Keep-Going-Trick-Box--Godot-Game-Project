@@ -23,7 +23,7 @@ Welcome to the repository for my first 3D game made with Godot Engine! This proj
 Instructions for installing and running the game will be provided once the game is complete and released.
 
 ## Screenshots
-*(Add your screenshots here)*
+
 
 ![image](https://github.com/user-attachments/assets/9231479e-312f-488b-a79e-da5c2c15bfe5)
 ![image1](https://github.com/user-attachments/assets/bbf1490b-70bf-4fb4-ae38-bf345a9e1032)
