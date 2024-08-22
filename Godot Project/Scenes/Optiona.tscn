@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cianckgi7rfrd"]
+[gd_scene load_steps=42 format=3 uid="uid://cianckgi7rfrd"]
 
 [ext_resource type="Texture2D" uid="uid://dsgc0tvdnxa" path="res://Images/UI/Options/Pannel.png" id="1_oq1js"]
 [ext_resource type="Texture2D" uid="uid://dfdwtk701vbw0" path="res://Images/UI/about dev/exit.png" id="2_gve0r"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d4iuu7vv4nnv7" path="res://Images/UI/Options/Normal option button miror.png" id="10_6megs"]
 [ext_resource type="Texture2D" uid="uid://boc1i3xomcdka" path="res://Images/UI/Options/hovred option button miror.png" id="11_p7nsb"]
 [ext_resource type="Texture2D" uid="uid://bhu81erfvt73n" path="res://Images/UI/Options/Control settings.png" id="12_0ty0d"]
+[ext_resource type="Script" path="res://Scripts/Options/Resolution.gd" id="12_wvj8q"]
 [ext_resource type="StyleBox" uid="uid://dk0bn2eb5rfnn" path="res://Images/UI/Options/Controls/new_style_box_texture.tres" id="13_e25py"]
 [ext_resource type="Texture2D" uid="uid://bl8g7qeapiy2o" path="res://Images/UI/Options/Controls/Controls.png" id="14_l4cn4"]
 [ext_resource type="Texture2D" uid="uid://b5opcoqalr55r" path="res://Images/UI/Options/Controls/Controller.png" id="15_vplfh"]
@@ -19,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://b4es1k66pvygr" path="res://Images/UI/Options/Controls/Keyboard controls.png" id="17_my7yy"]
 [ext_resource type="Texture2D" uid="uid://c1pqaov32iv5" path="res://Images/UI/Options/Controls/Keyboard.png" id="18_q6xsp"]
 [ext_resource type="Texture2D" uid="uid://c5f136u74t1eh" path="res://Images/UI/Options/Controls/Hovred Keyboard.png" id="19_0ruj5"]
+[ext_resource type="Texture2D" uid="uid://bwvtylr3dxs1j" path="res://Images/UI/Options/Help.png" id="20_g7tfj"]
+[ext_resource type="Texture2D" uid="uid://dj1gkquk1o4dl" path="res://Images/UI/Options/Hovred help.png" id="21_ioc68"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x34lt"]
 texture = ExtResource("2_gve0r")
@@ -85,6 +88,12 @@ texture = ExtResource("18_q6xsp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4b6vr"]
 texture = ExtResource("19_0ruj5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hqx4"]
+texture = ExtResource("20_g7tfj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvkx8"]
+texture = ExtResource("21_ioc68")
 
 [node name="VBoxContainer2" type="VBoxContainer"]
 offset_left = 43.0
@@ -166,6 +175,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_gewyu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ewc7t")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_knlln")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ewc7t")
+script = ExtResource("12_wvj8q")
 
 [node name="FullScreen" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -221,3 +231,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_uhcws")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/focus = SubResource("StyleBoxTexture_4b6vr")
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls"]
+custom_minimum_size = Vector2(0, 570)
+layout_mode = 2
+flat = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_0hqx4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hvkx8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hvkx8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hvkx8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hvkx8")
