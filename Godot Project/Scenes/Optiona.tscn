@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cianckgi7rfrd"]
+[gd_scene load_steps=43 format=3 uid="uid://cianckgi7rfrd"]
 
 [ext_resource type="Texture2D" uid="uid://dsgc0tvdnxa" path="res://Images/UI/Options/Pannel.png" id="1_oq1js"]
 [ext_resource type="Texture2D" uid="uid://dfdwtk701vbw0" path="res://Images/UI/about dev/exit.png" id="2_gve0r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://rh373eokncx1" path="res://Images/UI/Options/Hovrefd graphic settings.png" id="5_irceh"]
 [ext_resource type="LabelSettings" uid="uid://cau3uv6n5jqot" path="res://Images/UI/Options/Controls/Text.tres" id="6_hbwhk"]
 [ext_resource type="Theme" uid="uid://cj7red5mcsamw" path="res://Themes/theme.tres" id="7_wvycs"]
+[ext_resource type="Script" path="res://Scripts/Options/V-sync.gd" id="8_7fqsu"]
 [ext_resource type="Texture2D" uid="uid://bxq5stcv1k6ne" path="res://Images/UI/Options/Hovred option button.png" id="8_k1ynu"]
 [ext_resource type="Texture2D" uid="uid://bbm4l2kiu8rwu" path="res://Images/UI/Options/option button.png" id="9_3c166"]
 [ext_resource type="Texture2D" uid="uid://d4iuu7vv4nnv7" path="res://Images/UI/Options/Normal option button miror.png" id="10_6megs"]
@@ -155,6 +156,7 @@ label_settings = ExtResource("6_hbwhk")
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("7_wvycs")
+script = ExtResource("8_7fqsu")
 
 [node name="Resolution" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2

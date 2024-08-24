@@ -14,11 +14,11 @@ func _ready():
 		Variables.selected_resolution_ID = 4
 		
 	self.connect("item_selected", Callable(self, "on_selected"))
-	self.add_item("800x600")
-	self.add_item("1280x720")
-	self.add_item("1920x1080")
-	self.add_item("2560x1440")
-	self.add_item("3840x2160")
+	self.add_item(" 800x600")
+	self.add_item(" 1280x720")
+	self.add_item(" 1920x1080")
+	self.add_item(" 2560x1440")
+	self.add_item(" 3840x2160")
 	
 	Variables._save_settings()
 	
