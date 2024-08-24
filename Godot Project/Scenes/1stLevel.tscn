@@ -60,7 +60,7 @@ material = ExtResource("2_2ue3k")
 size = Vector3(3.035, 0.715, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rerjt"]
-size = Vector3(3, 0.2, 3)
+size = Vector3(3, 0.11, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0gjcc"]
 size = Vector3(3, 0.2, 3)
@@ -284,7 +284,7 @@ transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114
 script = ExtResource("8_qush2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.634, 0.06, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.634, 0.259297, -1.49012e-08)
 shape = SubResource("BoxShape3D_rerjt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]

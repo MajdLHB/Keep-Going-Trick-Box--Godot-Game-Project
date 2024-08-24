@@ -3,6 +3,7 @@ extends Node
 # Making a list of scenes
 var Scenes = [
 	"res://Scenes/UI1stScene.tscn",
+	"res://Scenes/Level-Select.tscn",
 	"res://Scenes/1stLevel.tscn",
 	"res://Scenes/2ndLevel.tscn",
 	"res://Scenes/3rdLevel.tscn"
@@ -11,9 +12,9 @@ var Scenes = [
 var FirstSceneIndex = 0
 var CurrentIndex = 0
 var SvaGameLevel
-var FirstLevelPath = Scenes[1]
-var FirstLevelIndex = 1
-var LastLevelIndex = 3
+var FirstLevelPath = Scenes[2]
+var FirstLevelIndex = 2
+var LastLevelIndex = 4
 
 
 func _Load(Scene_index):

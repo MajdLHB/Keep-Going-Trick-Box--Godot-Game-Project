@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cu3vv7xg3n2jp"]
+
+[node name="LevelSelect" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
