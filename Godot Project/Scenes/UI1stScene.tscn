@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://ghr5f8h3v0nr"]
+[gd_scene load_steps=118 format=3 uid="uid://ghr5f8h3v0nr"]
 
 [ext_resource type="Texture2D" uid="uid://dvhkcs5kas8n8" path="res://Images/UI/continue button.png" id="1_ukbyw"]
 [ext_resource type="Environment" uid="uid://q3hgyleo6eca" path="res://Enviroment/Enviroment.tres" id="1_v7d7x"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://bbm4l2kiu8rwu" path="res://Images/UI/Options/option button.png" id="46_pc2ta"]
 [ext_resource type="Texture2D" uid="uid://bxq5stcv1k6ne" path="res://Images/UI/Options/Hovred option button.png" id="47_76j5l"]
 [ext_resource type="Texture2D" uid="uid://bl8g7qeapiy2o" path="res://Images/UI/Options/Controls/Controls.png" id="47_htwfm"]
+[ext_resource type="Script" path="res://Scripts/Options/V-sync.gd" id="47_topqc"]
 [ext_resource type="Texture2D" uid="uid://b5opcoqalr55r" path="res://Images/UI/Options/Controls/Controller.png" id="48_if04w"]
 [ext_resource type="Texture2D" uid="uid://d4iuu7vv4nnv7" path="res://Images/UI/Options/Normal option button miror.png" id="48_wmrby"]
 [ext_resource type="Texture2D" uid="uid://cvwrrplmjchxn" path="res://Images/UI/Options/Controls/Hovred controller.png" id="49_wlims"]
@@ -58,6 +59,8 @@
 [ext_resource type="Texture2D" uid="uid://b4es1k66pvygr" path="res://Images/UI/Options/Controls/Keyboard controls.png" id="50_pfwq8"]
 [ext_resource type="Texture2D" uid="uid://c1pqaov32iv5" path="res://Images/UI/Options/Controls/Keyboard.png" id="51_ojjvt"]
 [ext_resource type="Texture2D" uid="uid://c5f136u74t1eh" path="res://Images/UI/Options/Controls/Hovred Keyboard.png" id="52_ef3jk"]
+[ext_resource type="Script" path="res://Scripts/Options/Resolution.gd" id="52_xkfsj"]
+[ext_resource type="Script" path="res://Scripts/Options/full screen.gd" id="53_svuon"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5gk4"]
 size = Vector3(10, 1, 10)
@@ -521,6 +524,7 @@ label_settings = ExtResource("44_q1doh")
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("45_meru3")
+script = ExtResource("47_topqc")
 
 [node name="Resolution" type="HBoxContainer" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -541,6 +545,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_gewyu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ewc7t")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_knlln")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ewc7t")
+script = ExtResource("52_xkfsj")
 
 [node name="FullScreen" type="HBoxContainer" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -553,6 +558,7 @@ label_settings = ExtResource("44_q1doh")
 [node name="CheckBox" type="CheckBox" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/FullScreen"]
 layout_mode = 2
 theme = ExtResource("45_meru3")
+script = ExtResource("53_svuon")
 
 [node name="Control settings" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 100)

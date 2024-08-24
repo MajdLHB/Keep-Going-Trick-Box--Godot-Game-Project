@@ -34,6 +34,10 @@ func Set_Settings():
 	print(height)
 	ProjectSettings.set("display/mouse_cursor/custom_image", "res://Images/Mouse cursor/Cursor.jpg")
 	DisplayServer.window_set_size(Vector2i(FirstResolution.to_int(), SecondResolution.to_int()))
+	if FullScreen == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	elif FullScreen == false:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _save_settings():
 	config.set_value("display", "vsync", VSYNC)

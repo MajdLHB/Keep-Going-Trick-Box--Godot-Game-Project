@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://rh373eokncx1" path="res://Images/UI/Options/Hovrefd graphic settings.png" id="5_irceh"]
 [ext_resource type="LabelSettings" uid="uid://cau3uv6n5jqot" path="res://Images/UI/Options/Controls/Text.tres" id="6_hbwhk"]
 [ext_resource type="Theme" uid="uid://cj7red5mcsamw" path="res://Themes/theme.tres" id="7_wvycs"]
-[ext_resource type="Script" path="res://Scripts/Options/V-sync.gd" id="8_7fqsu"]
 [ext_resource type="Texture2D" uid="uid://bxq5stcv1k6ne" path="res://Images/UI/Options/Hovred option button.png" id="8_k1ynu"]
 [ext_resource type="Texture2D" uid="uid://bbm4l2kiu8rwu" path="res://Images/UI/Options/option button.png" id="9_3c166"]
 [ext_resource type="Texture2D" uid="uid://d4iuu7vv4nnv7" path="res://Images/UI/Options/Normal option button miror.png" id="10_6megs"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bhu81erfvt73n" path="res://Images/UI/Options/Control settings.png" id="12_0ty0d"]
 [ext_resource type="Script" path="res://Scripts/Options/Resolution.gd" id="12_wvj8q"]
 [ext_resource type="StyleBox" uid="uid://dk0bn2eb5rfnn" path="res://Images/UI/Options/Controls/new_style_box_texture.tres" id="13_e25py"]
+[ext_resource type="Script" path="res://Scripts/Options/full screen.gd" id="13_he55j"]
 [ext_resource type="Texture2D" uid="uid://bl8g7qeapiy2o" path="res://Images/UI/Options/Controls/Controls.png" id="14_l4cn4"]
 [ext_resource type="Texture2D" uid="uid://b5opcoqalr55r" path="res://Images/UI/Options/Controls/Controller.png" id="15_vplfh"]
 [ext_resource type="Texture2D" uid="uid://cvwrrplmjchxn" path="res://Images/UI/Options/Controls/Hovred controller.png" id="16_skcwv"]
@@ -156,7 +156,6 @@ label_settings = ExtResource("6_hbwhk")
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("7_wvycs")
-script = ExtResource("8_7fqsu")
 
 [node name="Resolution" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -190,6 +189,7 @@ label_settings = ExtResource("6_hbwhk")
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer/ScrollContainer/VBoxContainer/FullScreen"]
 layout_mode = 2
 theme = ExtResource("7_wvycs")
+script = ExtResource("13_he55j")
 
 [node name="Control settings" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 100)
