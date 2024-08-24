@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://ghr5f8h3v0nr"]
+[gd_scene load_steps=126 format=3 uid="uid://ghr5f8h3v0nr"]
 
 [ext_resource type="Texture2D" uid="uid://dvhkcs5kas8n8" path="res://Images/UI/continue button.png" id="1_ukbyw"]
 [ext_resource type="Environment" uid="uid://q3hgyleo6eca" path="res://Enviroment/Enviroment.tres" id="1_v7d7x"]
@@ -61,6 +61,10 @@
 [ext_resource type="Texture2D" uid="uid://c5f136u74t1eh" path="res://Images/UI/Options/Controls/Hovred Keyboard.png" id="52_ef3jk"]
 [ext_resource type="Script" path="res://Scripts/Options/Resolution.gd" id="52_xkfsj"]
 [ext_resource type="Script" path="res://Scripts/Options/full screen.gd" id="53_svuon"]
+[ext_resource type="Texture2D" uid="uid://bwvtylr3dxs1j" path="res://Images/UI/Options/Help.png" id="62_fshwl"]
+[ext_resource type="Texture2D" uid="uid://dj1gkquk1o4dl" path="res://Images/UI/Options/Hovred help.png" id="63_b2rwa"]
+[ext_resource type="Texture2D" uid="uid://4iowencwlwgj" path="res://Images/UI/Options/Contact us.png" id="64_1olel"]
+[ext_resource type="Texture2D" uid="uid://biyv7ykeej5lk" path="res://Images/UI/Options/Hovred contact us.png" id="65_tr2ig"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5gk4"]
 size = Vector3(10, 1, 10)
@@ -265,6 +269,18 @@ texture = ExtResource("51_ojjvt")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4b6vr"]
 texture = ExtResource("52_ef3jk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nonmj"]
+texture = ExtResource("62_fshwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02uji"]
+texture = ExtResource("63_b2rwa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmn1u"]
+texture = ExtResource("64_1olel")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q852u"]
+texture = ExtResource("65_tr2ig")
 
 [node name="Ui1StScene" type="Node3D"]
 
@@ -602,3 +618,23 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_uhcws")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/focus = SubResource("StyleBoxTexture_4b6vr")
+
+[node name="Button" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/Controls"]
+custom_minimum_size = Vector2(0, 570)
+layout_mode = 2
+
+[node name="Help" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_nonmj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_02uji")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_02uji")
+theme_override_styles/focus = SubResource("StyleBoxTexture_02uji")
+
+[node name="Button" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 80)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmn1u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q852u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q852u")
+theme_override_styles/focus = SubResource("StyleBoxTexture_q852u")
