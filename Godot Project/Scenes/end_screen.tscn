@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1w22fm17nfi7"]
+
+[ext_resource type="Texture2D" uid="uid://4um8vwampu5q" path="res://Images/UI/End Screen/End screen.png" id="1_hvj6s"]
+[ext_resource type="Texture2D" uid="uid://dt10yww4isit2" path="res://Images/UI/Level select/Go back.png" id="2_b1jmy"]
+[ext_resource type="Texture2D" uid="uid://hdlehecwkjx1" path="res://Images/UI/Level select/Hovred go back.png" id="3_omvwk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70y1w"]
+texture = ExtResource("2_b1jmy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_enq4b"]
+texture = ExtResource("3_omvwk")
+
+[sub_resource type="GDScript" id="GDScript_7kb42"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	grab_focus()
+	self.connect(\"pressed\", Callable(self, \"OnPressed\"))
+
+func OnPressed():
+	SceneManager._Load(SceneManager.FirstSceneIndex)
+"
+
+[node name="End screen" type="Node2D"]
+position = Vector2(227, 102)
+scale = Vector2(0.282535, 0.295445)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EndScreen" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(948, 550)
+scale = Vector2(0.960328, 0.952328)
+texture = ExtResource("1_hvj6s")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(150, 30)
+offset_left = 755.0
+offset_top = 569.0
+offset_right = 905.0
+offset_bottom = 599.0
+scale = Vector2(2.38242, 6.06202)
+theme_override_styles/normal = SubResource("StyleBoxTexture_70y1w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_enq4b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_enq4b")
+theme_override_styles/focus = SubResource("StyleBoxTexture_enq4b")
+script = SubResource("GDScript_7kb42")

@@ -6,7 +6,8 @@ var Scenes = [
 	"res://Scenes/Level-Select.tscn",
 	"res://Scenes/1stLevel.tscn",
 	"res://Scenes/2ndLevel.tscn",
-	"res://Scenes/3rdLevel.tscn"
+	"res://Scenes/3rdLevel.tscn",
+	"res://Scenes/end_screen.tscn"
 ]
 
 var FirstSceneIndex = 0

@@ -20,4 +20,4 @@ func _process(delta):
 
 func OnPressed():
 	if Variables.Activate_button == true:
-		SceneManager._Load(SaveManager.Level + 1)
+		SceneManager._Load(SaveManager.Level)
