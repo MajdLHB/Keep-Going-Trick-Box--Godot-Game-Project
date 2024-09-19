@@ -38,14 +38,14 @@ func SetPos():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if SceneManager.CurrentIndex  - SceneManager.FirstLevelIndex + 1 == 3:
+	if SaveManager.Level  == 4:
 		if Exited and EntereToSecondArea:
 			Entered = false
 			Exited = false
 			EntereToSecondArea = false
-			print(SceneManager.CurrentIndex)
+			print("CI: " + str(SceneManager.CurrentIndex))
 			SceneManager.CurrentIndex += 1
-			SaveManager.Level = SceneManager.CurrentIndex
+			SaveManager.Level = SceneManager.CurrentIndex  
 			SaveManager.SaveData()
 			SaveManager.LoadData()
 			SceneManager._Load(SceneManager.CurrentIndex)
@@ -59,12 +59,12 @@ func _physics_process(delta):
 			Entered = false
 			Exited = false
 			EntereToSecondArea = false
-			print(SceneManager.CurrentIndex)
+			print("CI: " + str(SceneManager.CurrentIndex))
 			SceneManager.CurrentIndex += 1
-			SaveManager.Level = SceneManager.CurrentIndex
+			SaveManager.Level = SceneManager.CurrentIndex 
 			SaveManager.SaveData()
 			SaveManager.LoadData()
-			SceneManager._Load(SceneManager.CurrentIndex)	
+			SceneManager._Load(SceneManager.CurrentIndex)
 		elif not Exited and EntereToSecondArea:
 			Entered = false
 			Exited = false

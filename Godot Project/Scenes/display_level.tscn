@@ -15,8 +15,10 @@ script/source = "extends Label
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SaveManager.LoadData()
-	var LvelNum = SaveManager.Level - SceneManager.FirstLevelIndex + 1
-	self.text = \"Level \" + str(LvelNum)
+	print(\"Loaded level \" + str(SaveManager.Level))
+	print(\"1st level \" + str(SceneManager.FirstLevelIndex))
+	var LvelNum = SaveManager.Level 
+	self.text = \"Level \" + str(LvelNum - 1)
 
 
 

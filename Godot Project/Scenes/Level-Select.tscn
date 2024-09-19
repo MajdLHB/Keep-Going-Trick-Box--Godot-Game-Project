@@ -1,9 +1,147 @@
-[gd_scene format=3 uid="uid://cu3vv7xg3n2jp"]
+[gd_scene load_steps=13 format=3 uid="uid://cu3vv7xg3n2jp"]
+
+[ext_resource type="Texture2D" uid="uid://dawjn3jmpwe74" path="res://Images/UI/Level select/Background.png" id="1_mvkuc"]
+[ext_resource type="Texture2D" uid="uid://dt10yww4isit2" path="res://Images/UI/Level select/Go back.png" id="2_bqsoe"]
+[ext_resource type="Texture2D" uid="uid://hdlehecwkjx1" path="res://Images/UI/Level select/Hovred go back.png" id="3_gv66o"]
+[ext_resource type="Theme" uid="uid://yihuw51uyhf3" path="res://Themes/Buttons.tres" id="4_avijs"]
+[ext_resource type="Texture2D" uid="uid://4qfatyo4o0la" path="res://Images/UI/Level select/Disabled button.png" id="5_axgjp"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelButtons.gd" id="6_nvk65"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qmjw"]
+texture = ExtResource("2_bqsoe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aocix"]
+texture = ExtResource("3_gv66o")
+
+[sub_resource type="GDScript" id="GDScript_cglr3"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.connect(\"pressed\", Callable(self, \"OnPressed\"))
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+func OnPressed():
+	SceneManager._Load(0)
+"
+
+[sub_resource type="GDScript" id="GDScript_bn15f"]
+script/source = "extends Button
+var LevelNUm 
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	grab_focus()
+	LevelNUm = int(self.text)
+	self.connect(\"pressed\", Callable(self, \"OnPressed\"))
+	if SaveManager.Level >= LevelNUm + 1:
+		self.disabled = false
+	elif SaveManager.Level < LevelNUm + 1:
+		self.disabled = true
+
+
+
+func OnPressed():
+	SaveManager.Level = LevelNUm
+	SceneManager.CurrentIndex = LevelNUm + 1
+	SceneManager._Load(SaveManager.Level + 1)
+	
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnnqw"]
+texture = ExtResource("5_axgjp")
+
+[sub_resource type="Theme" id="Theme_xhs44"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.5)
+Button/font_sizes/font_size = 40
+Button/styles/disabled = SubResource("StyleBoxTexture_nnnqw")
 
 [node name="LevelSelect" type="Node2D"]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960.5, 545)
+scale = Vector2(0.435897, 0.440404)
+texture = ExtResource("1_mvkuc")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(280, 110)
+offset_left = 1608.0
+offset_top = 37.0
+offset_right = 1888.0
+offset_bottom = 147.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5qmjw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aocix")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aocix")
+theme_override_styles/focus = SubResource("StyleBoxTexture_aocix")
+script = SubResource("GDScript_cglr3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1750, 340)
+offset_left = 79.0
+offset_top = 386.0
+offset_right = 119.0
+offset_bottom = 426.0
+follow_focus = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer"]
+custom_minimum_size = Vector2(1800, 300)
+layout_mode = 2
+
+[node name="HScrollBar" type="HScrollBar" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Level 1" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(285, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../Button")
+focus_neighbor_right = NodePath("../Level 2")
+focus_next = NodePath("../Level 2")
+theme = ExtResource("4_avijs")
+text = "Level 1"
+script = SubResource("GDScript_bn15f")
+
+[node name="Level 2" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(285, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Level 1")
+focus_neighbor_top = NodePath("../../../Button")
+focus_neighbor_right = NodePath("../Level 3")
+focus_next = NodePath("../Level 3")
+focus_previous = NodePath("../Level 1")
+theme = ExtResource("4_avijs")
+text = "Level 2"
+script = ExtResource("6_nvk65")
+
+[node name="Level 3" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(285, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Level 2")
+focus_neighbor_top = NodePath("../../../Button")
+focus_neighbor_right = NodePath("../Button2")
+theme = ExtResource("4_avijs")
+text = "Level 3
+"
+script = ExtResource("6_nvk65")
+
+[node name="Button" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+theme = SubResource("Theme_xhs44")
+disabled = true
+text = "Demo Version
+Future Levels comming soon
+or make your own levels: Visit @MajdLHB in github"
+
+[node name="Button2" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Level 3")
+focus_neighbor_top = NodePath("../../../Button")

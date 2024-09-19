@@ -1,12 +1,14 @@
-[gd_scene load_steps=126 format=3 uid="uid://ghr5f8h3v0nr"]
+[gd_scene load_steps=131 format=3 uid="uid://ghr5f8h3v0nr"]
 
 [ext_resource type="Texture2D" uid="uid://dvhkcs5kas8n8" path="res://Images/UI/continue button.png" id="1_ukbyw"]
 [ext_resource type="Environment" uid="uid://q3hgyleo6eca" path="res://Enviroment/Enviroment.tres" id="1_v7d7x"]
 [ext_resource type="PackedScene" uid="uid://c0yhafp0r7o3i" path="res://Scenes/Player.tscn" id="2_3nn1e"]
 [ext_resource type="Texture2D" uid="uid://lfv57k3c0dv5" path="res://Images/UI/new game button.png" id="2_iomk8"]
 [ext_resource type="Texture2D" uid="uid://d1pk4w0xux728" path="res://Images/UI/options button.png" id="3_t3128"]
+[ext_resource type="Texture2D" uid="uid://b60lneuh8kwv8" path="res://Images/UI/Level select.png" id="4_47tcu"]
 [ext_resource type="Texture2D" uid="uid://cimed13xkhddj" path="res://Images/UI/hovred Continue.png" id="4_688ab"]
 [ext_resource type="Texture2D" uid="uid://dvfeida6dj3yt" path="res://Images/UI/about dev button.png" id="4_bfif2"]
+[ext_resource type="Texture2D" uid="uid://bncfa32ntqdby" path="res://Images/UI/hovred level select.png" id="5_cu0cg"]
 [ext_resource type="Texture2D" uid="uid://d2mn724pmblyn" path="res://Images/UI/quit button.png" id="5_o2uwe"]
 [ext_resource type="Texture2D" uid="uid://rlbi8gj11rhx" path="res://Images/UI/Pannel.png" id="6_bk5vn"]
 [ext_resource type="Texture2D" uid="uid://bvrl0cbjqiu6b" path="res://Images/UI/pressed continue.png" id="6_lbcjp"]
@@ -71,6 +73,28 @@ size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ga8w2"]
 size = Vector3(10, 1, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h51h2"]
+texture = ExtResource("4_47tcu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ko3wu"]
+texture = ExtResource("5_cu0cg")
+
+[sub_resource type="GDScript" id="GDScript_qjiyf"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.connect(\"pressed\", Callable(self, \"OnPressed\"))
+
+
+func OnPressed():
+	SceneManager._Load(1)
+
+
+
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1f34"]
 texture = ExtResource("1_ukbyw")
@@ -311,7 +335,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.493592, -2.63054)
 follow_viewport_enabled = true
 
 [node name="Pannel" type="Sprite2D" parent="UI/CanvasLayer"]
-position = Vector2(432.95, 366.45)
+position = Vector2(489, 357)
 scale = Vector2(0.3, -0.3)
 texture = ExtResource("6_bk5vn")
 
@@ -332,12 +356,26 @@ alignment = 1
 custom_minimum_size = Vector2(335, 131)
 layout_mode = 2
 
+[node name="Level Select" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 10)
+layout_mode = 2
+focus_neighbor_right = NodePath("../Continue")
+focus_neighbor_bottom = NodePath("../../VBoxContainer/Options")
+focus_next = NodePath("../Continue")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h51h2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ko3wu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ko3wu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ko3wu")
+script = SubResource("GDScript_qjiyf")
+
 [node name="Continue" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(335, 131)
 layout_mode = 2
+focus_neighbor_left = NodePath("../Level Select")
 focus_neighbor_right = NodePath("../New Game")
 focus_neighbor_bottom = NodePath("../../VBoxContainer/Options")
 focus_next = NodePath("../New Game")
+focus_previous = NodePath("../Level Select")
 theme_override_styles/normal = SubResource("StyleBoxTexture_g1f34")
 theme_override_styles/hover = SubResource("StyleBoxTexture_guwo0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_mo0fi")
@@ -429,7 +467,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_02fld")
 theme_override_styles/focus = SubResource("StyleBoxTexture_akg2m")
 
 [node name="ProjectLogo" type="Sprite2D" parent="UI/CanvasLayer"]
-position = Vector2(389.95, 150)
+position = Vector2(510, 144)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_fco76")
 

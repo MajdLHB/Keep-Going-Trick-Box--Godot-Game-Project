@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://yihuw51uyhf3"]
+
+[ext_resource type="Texture2D" uid="uid://4qfatyo4o0la" path="res://Images/UI/Level select/Disabled button.png" id="1_dderf"]
+[ext_resource type="FontFile" uid="uid://c8xu7afu4hwpp" path="res://Fonts/ADLaMDisplay-Regular.ttf" id="1_jutpb"]
+[ext_resource type="Texture2D" uid="uid://cq2askyjvudvp" path="res://Images/UI/Level select/hovred button.png" id="2_aldca"]
+[ext_resource type="Texture2D" uid="uid://bf1aas03utsy2" path="res://Images/UI/Level select/Button.png" id="4_4pi5p"]
+
+[sub_resource type="FontVariation" id="FontVariation_b3ahl"]
+base_font = ExtResource("1_jutpb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8h85"]
+texture = ExtResource("1_dderf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ko4yg"]
+texture = ExtResource("2_aldca")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7r5u8"]
+texture = ExtResource("4_4pi5p")
+
+[resource]
+Button/font_sizes/font_size = 40
+Button/fonts/font = SubResource("FontVariation_b3ahl")
+Button/styles/disabled = SubResource("StyleBoxTexture_y8h85")
+Button/styles/focus = SubResource("StyleBoxTexture_ko4yg")
+Button/styles/hover = SubResource("StyleBoxTexture_ko4yg")
+Button/styles/normal = SubResource("StyleBoxTexture_7r5u8")
+Button/styles/pressed = SubResource("StyleBoxTexture_ko4yg")

@@ -24,6 +24,6 @@ func _Load(Scene_index):
 
 
 func _ready():
-	var CurrentIndex = SaveManager.Level
+	var CurrentIndex = SaveManager.Level + 1
 	_Load(FirstSceneIndex)
 	
