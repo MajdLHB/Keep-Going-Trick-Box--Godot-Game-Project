@@ -15,15 +15,22 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if (Input.is_action_just_pressed("Jump") and is_on_floor()):
 		velocity.y = JUMP_VELOCITY
-	
-	if Input.is_action_pressed("MoveForward") and Input.is_action_pressed("MoveBackward"):
+	elif (Variables.JumpButton == true and is_on_floor()):
+		velocity.y = JUMP_VELOCITY
+	if (Input.is_action_pressed("MoveForward") and Input.is_action_pressed("MoveBackward")):
 		velocity.z = 0
 	elif Input.is_action_pressed("MoveForward"):
 		velocity.z = SPEED
+	elif Variables.JoystickMovement.y > 0.1:
+		var speed = Variables.JoystickMovement.y * SPEED
+		velocity.z = speed
 	elif Input.is_action_pressed("MoveBackward"):
 		velocity.z = -SPEED
+	elif Variables.JoystickMovement.y < -0.1:
+		var speed = Variables.JoystickMovement.y * SPEED
+		velocity.z = speed
 	else:
 		velocity.z = lerp(velocity.z,0.0,0.1)
 	
@@ -31,8 +38,14 @@ func _physics_process(delta):
 		velocity.x = 0
 	elif Input.is_action_pressed("MoveRight"):
 		velocity.x = -SPEED
+	elif Variables.JoystickMovement.x > 0.1:
+		var speed = Variables.JoystickMovement.x * SPEED
+		velocity.x = speed
 	elif Input.is_action_pressed("MoveLeft"):
 		velocity.x = SPEED
+	elif Variables.JoystickMovement.x < -0.1:
+		var speed = Variables.JoystickMovement.x * SPEED
+		velocity.x = speed
 	else:
 		velocity.x= lerp(velocity.x,0.0,0.1)
 

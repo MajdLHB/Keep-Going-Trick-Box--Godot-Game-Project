@@ -4,6 +4,7 @@ extends HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Variables.InFirstOrSecondScene = false
 	SceneManager.CurrentIndex = SaveManager.Level
 	SaveManager.SaveData()
 	SaveManager.LoadData()

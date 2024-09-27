@@ -7,6 +7,11 @@ var selected_resolution_ID = 0
 var FullScreen = false
 var settings_file_path = "res://Settings file/Settinggs.cfg"
 var config = ConfigFile.new()
+var JoystickMovement: Vector2
+var JumpButton = false
+var PauseButton = false
+var InFirstOrSecondScene = false
+
 
 
 
@@ -16,6 +21,7 @@ func _ready():
 	_load_settings()
 	Set_Settings()
 	_save_settings()
+	JoystickMovement= Vector2(0, 0)
 
 
 

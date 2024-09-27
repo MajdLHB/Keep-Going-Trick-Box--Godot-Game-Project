@@ -8,7 +8,7 @@ func _ready():
 	Engine.time_scale = 1.0  
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause") or Variables.PauseButton == true:
 		Pressed = !Pressed  
 		$CanvasLayer.visible = Pressed 
 		if Pressed == false:

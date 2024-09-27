@@ -27,3 +27,7 @@ func Close_Door():
 
 func _on_buttons_open_door():
 	pass # Replace with function body.
+
+
+func _on_button_close_door():
+	pass # Replace with function body.

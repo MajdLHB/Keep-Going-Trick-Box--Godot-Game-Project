@@ -1,6 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0yhafp0r7o3i"]
+[gd_scene load_steps=20 format=3 uid="uid://c0yhafp0r7o3i"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_mpe8m"]
+[ext_resource type="Texture2D" uid="uid://bbbf3e33fuf2d" path="res://Images/UI/In game UI/Joystick place.png" id="2_268xr"]
+[ext_resource type="Texture2D" uid="uid://db2xcphqtjhwb" path="res://Images/UI/In game UI/Joystick button.png" id="3_gejbl"]
+[ext_resource type="Script" path="res://Scripts/Mobile UI/Joystickring.gd" id="3_msoj0"]
+[ext_resource type="Script" path="res://Scripts/Mobile UI/Joystickbutton.gd" id="4_vp0fo"]
+[ext_resource type="Script" path="res://Scripts/Mobile UI/Joystick.gd" id="6_owrdk"]
+[ext_resource type="Texture2D" uid="uid://b47lotgyhw06o" path="res://Images/UI/In game UI/Jump.png" id="7_47gwu"]
+[ext_resource type="Texture2D" uid="uid://dptgyif6mh1vk" path="res://Images/UI/In game UI/hovred jump.png" id="8_l287r"]
+[ext_resource type="Script" path="res://Scripts/Mobile UI/Jump.gd" id="9_pxj38"]
+[ext_resource type="Texture2D" uid="uid://dmxru62htdre1" path="res://Images/UI/In game UI/Pause Menu.png" id="10_xqn0q"]
+[ext_resource type="Texture2D" uid="uid://cgjg01xgicr7r" path="res://Images/UI/In game UI/hovred pause menu.png" id="11_5ueht"]
+[ext_resource type="Script" path="res://Scripts/Mobile UI/PauseMenu.gd" id="12_qp3rc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoc5k"]
 albedo_color = Color(0.980392, 0, 0.137255, 1)
@@ -9,6 +20,18 @@ albedo_color = Color(0.980392, 0, 0.137255, 1)
 material = SubResource("StandardMaterial3D_hoc5k")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vstrh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqcel"]
+texture = ExtResource("7_47gwu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd0ks"]
+texture = ExtResource("8_l287r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc3n1"]
+texture = ExtResource("10_xqn0q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ik3e7"]
+texture = ExtResource("11_5ueht")
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_mpe8m")
@@ -21,3 +44,55 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 shape = SubResource("BoxShape3D_vstrh")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Joystick" type="CanvasLayer" parent="Node2D"]
+
+[node name="JoystickButton" type="Sprite2D" parent="Node2D/Joystick"]
+position = Vector2(203.7, 885.8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_gejbl")
+script = ExtResource("4_vp0fo")
+
+[node name="JoystickPlace" type="Sprite2D" parent="Node2D/Joystick"]
+position = Vector2(207, 881)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_268xr")
+script = ExtResource("3_msoj0")
+
+[node name="Joystick" type="Button" parent="Node2D/Joystick"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 200)
+offset_left = 93.0
+offset_top = 767.0
+offset_right = 323.0
+offset_bottom = 997.0
+script = ExtResource("6_owrdk")
+
+[node name="Jump" type="Button" parent="Node2D"]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1568.0
+offset_top = 727.0
+offset_right = 1668.0
+offset_bottom = 827.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pqcel")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sd0ks")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sd0ks")
+script = ExtResource("9_pxj38")
+
+[node name="Button" type="Button" parent="Node2D"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nc3n1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ik3e7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ik3e7")
+script = ExtResource("12_qp3rc")
+
+[connection signal="button_down" from="Node2D/Joystick/Joystick" to="Node2D/Joystick/JoystickButton" method="_on_joystick_button_down"]
+[connection signal="button_up" from="Node2D/Joystick/Joystick" to="Node2D/Joystick/JoystickButton" method="_on_joystick_button_up"]
+[connection signal="pressed" from="Node2D/Jump" to="Node2D/Jump" method="_on_pressed"]
+[connection signal="pressed" from="Node2D/Button" to="Node2D/Button" method="_on_pressed"]

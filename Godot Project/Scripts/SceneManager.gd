@@ -7,6 +7,7 @@ var Scenes = [
 	"res://Scenes/1stLevel.tscn",
 	"res://Scenes/2ndLevel.tscn",
 	"res://Scenes/3rdLevel.tscn",
+	"res://Scenes/4thLevel.tscn",
 	"res://Scenes/end_screen.tscn"
 ]
 

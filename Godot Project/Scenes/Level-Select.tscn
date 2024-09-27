@@ -19,6 +19,7 @@ script/source = "extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Variables.InFirstOrSecondScene = true
 	self.connect(\"pressed\", Callable(self, \"OnPressed\"))
 
 
@@ -130,6 +131,13 @@ focus_neighbor_right = NodePath("../Button2")
 theme = ExtResource("4_avijs")
 text = "Level 3
 "
+script = ExtResource("6_nvk65")
+
+[node name="Level4" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(285, 0)
+layout_mode = 2
+theme = ExtResource("4_avijs")
+text = "Level 4"
 script = ExtResource("6_nvk65")
 
 [node name="Button" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
