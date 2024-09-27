@@ -7,9 +7,9 @@ Welcome to the repository for my first 3D game made with Godot Engine! This proj
 
 ## Game Details
 - **Engine:** Godot 4.2
-- **Platform:** Windows (Phone version coming soon)
+- **Platform:** Windows / Android / Linux
 - **Status:** Incomplete and not yet released
-- **Launch Platform:** Itch.io 
+- **Launch Platform:** Itch.io / Game Jolt
 - **Language:** GDScript
 
 ## Features
