@@ -22,6 +22,12 @@ Welcome to the repository for my first 3D game made with Godot Engine! This proj
 ## Installation
 Instructions for installing and running the game will be provided once the game is complete and released.
 
+## Adding levels
+- Copy the 2nd level scene 
+- Edit it in the way you like to make your own level
+- add it to the scene manager scenes list
+
+
 ## Screenshots
 
 
