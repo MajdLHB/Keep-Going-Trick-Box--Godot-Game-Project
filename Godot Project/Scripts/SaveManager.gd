@@ -1,10 +1,27 @@
 extends Node
 
-var SaveFile = "res://SaveGame/GameData.json"
+var SaveFile = ""
 var SavedGame = false
 var Level = 1
 var PlayerData = {
+	"Level": Level,
+	"SavedGame": SavedGame
 }
+
+func _init():
+	var UserDoccuments = OS.get_user_data_dir()
+	SaveFile = UserDoccuments + "/SaveData.json"
+	if FileAccess.file_exists(SaveFile):
+		SaveFile = SaveFile
+	else:
+		var file = FileAccess.open(SaveFile, FileAccess.WRITE)
+		var Json_Data = JSON.stringify(PlayerData)
+		if file:
+			file.store_string(Json_Data)
+		
+		file.close()
+		SaveFile = SaveFile
+
 
 func UpdateVar():
 	PlayerData = {
@@ -33,5 +50,3 @@ func SaveData():
 
 func _ready():
 	LoadData()
-
-

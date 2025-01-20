@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://4qfatyo4o0la" path="res://Images/UI/Level select/Disabled button.png" id="5_axgjp"]
 [ext_resource type="Script" path="res://Scripts/UI/LevelButtons.gd" id="6_nvk65"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qmjw"]
-texture = ExtResource("2_bqsoe")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aocix"]
 texture = ExtResource("3_gv66o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qmjw"]
+texture = ExtResource("2_bqsoe")
 
 [sub_resource type="GDScript" id="GDScript_cglr3"]
 script/source = "extends Button
@@ -78,10 +78,10 @@ offset_left = 1608.0
 offset_top = 37.0
 offset_right = 1888.0
 offset_bottom = 147.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_5qmjw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_aocix")
 theme_override_styles/hover = SubResource("StyleBoxTexture_aocix")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_aocix")
-theme_override_styles/focus = SubResource("StyleBoxTexture_aocix")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5qmjw")
 script = SubResource("GDScript_cglr3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]

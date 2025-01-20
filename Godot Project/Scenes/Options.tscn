@@ -20,11 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://c1pqaov32iv5" path="res://Images/UI/Options/Controls/Keyboard.png" id="18_hjc0d"]
 [ext_resource type="Texture2D" uid="uid://c5f136u74t1eh" path="res://Images/UI/Options/Controls/Hovred Keyboard.png" id="19_omtal"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x34lt"]
-texture = ExtResource("2_0en5o")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7ltb"]
 texture = ExtResource("3_0t46w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x34lt"]
+texture = ExtResource("2_0en5o")
 
 [sub_resource type="GDScript" id="GDScript_p0qxc"]
 script/source = "extends Button
@@ -49,8 +49,8 @@ func OnPressed():
 
 [sub_resource type="Theme" id="Theme_f4wi2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vf46"]
-texture = ExtResource("4_6sgmw")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1blm6"]
+texture = ExtResource("5_4k3t3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_miuq3"]
 texture = ExtResource("5_4k3t3")
@@ -58,35 +58,35 @@ texture = ExtResource("5_4k3t3")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llfng"]
 texture = ExtResource("5_4k3t3")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1blm6"]
-texture = ExtResource("5_4k3t3")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vf46"]
+texture = ExtResource("4_6sgmw")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gewyu"]
 texture = ExtResource("8_2eali")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykaqi"]
-texture = ExtResource("9_rqvbp")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knlln"]
+texture = ExtResource("11_cikl2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewc7t"]
 texture = ExtResource("10_1m4sn")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knlln"]
-texture = ExtResource("11_cikl2")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykaqi"]
+texture = ExtResource("9_rqvbp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0g62"]
 texture = ExtResource("12_txe4k")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixugp"]
-texture = ExtResource("15_ehvhw")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jhfa"]
 texture = ExtResource("16_77wll")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhcws"]
-texture = ExtResource("18_hjc0d")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixugp"]
+texture = ExtResource("15_ehvhw")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4b6vr"]
 texture = ExtResource("19_omtal")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhcws"]
+texture = ExtResource("18_hjc0d")
 
 [node name="VBoxContainer2" type="VBoxContainer"]
 
@@ -101,10 +101,10 @@ offset_left = 1275.0
 offset_top = -707.5
 offset_right = 1425.0
 offset_bottom = -557.5
-theme_override_styles/normal = SubResource("StyleBoxTexture_x34lt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_t7ltb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t7ltb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t7ltb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_t7ltb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x34lt")
 script = SubResource("GDScript_p0qxc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -127,10 +127,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
 theme = SubResource("Theme_f4wi2")
-theme_override_styles/normal = SubResource("StyleBoxTexture_2vf46")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1blm6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_miuq3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_llfng")
-theme_override_styles/focus = SubResource("StyleBoxTexture_1blm6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2vf46")
 
 [node name="V-sync" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -158,12 +158,12 @@ custom_minimum_size = Vector2(250, 70)
 layout_mode = 2
 theme = ExtResource("7_yp3ye")
 theme_override_styles/focus = SubResource("StyleBoxTexture_gewyu")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ykaqi")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_knlln")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gewyu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ewc7t")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gewyu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ewc7t")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_knlln")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ewc7t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ykaqi")
 
 [node name="FullScreen" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -180,10 +180,10 @@ theme = ExtResource("7_yp3ye")
 [node name="Control settings" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_k0g62")
+theme_override_styles/focus = ExtResource("13_cmdbo")
 theme_override_styles/hover = ExtResource("13_cmdbo")
 theme_override_styles/pressed = ExtResource("13_cmdbo")
-theme_override_styles/focus = ExtResource("13_cmdbo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_k0g62")
 
 [node name="Controls" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -199,10 +199,10 @@ offset_left = -353.333
 offset_top = -880.0
 offset_right = 346.667
 offset_bottom = -730.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_ixugp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7jhfa")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7jhfa")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7jhfa")
-theme_override_styles/focus = SubResource("StyleBoxTexture_7jhfa")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ixugp")
 
 [node name="KeyboardControls" type="Sprite2D" parent="VBoxContainer/ScrollContainer/VBoxContainer/Controls"]
 position = Vector2(815, 270)
@@ -215,7 +215,7 @@ offset_left = -366.667
 offset_top = -923.333
 offset_right = 333.333
 offset_bottom = -673.333
-theme_override_styles/normal = SubResource("StyleBoxTexture_uhcws")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4b6vr")
-theme_override_styles/focus = SubResource("StyleBoxTexture_4b6vr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uhcws")

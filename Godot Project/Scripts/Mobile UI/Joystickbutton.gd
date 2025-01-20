@@ -34,5 +34,3 @@ func _on_joystick_button_down():
 
 func _on_joystick_button_up():
 	IsPressed = false
-
-

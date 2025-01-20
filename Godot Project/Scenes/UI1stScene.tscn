@@ -74,11 +74,11 @@ size = Vector3(10, 1, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_ga8w2"]
 size = Vector3(10, 1, 10)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h51h2"]
-texture = ExtResource("4_47tcu")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ko3wu"]
 texture = ExtResource("5_cu0cg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h51h2"]
+texture = ExtResource("4_47tcu")
 
 [sub_resource type="GDScript" id="GDScript_qjiyf"]
 script/source = "extends Button
@@ -96,8 +96,8 @@ func OnPressed():
 
 "
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1f34"]
-texture = ExtResource("1_ukbyw")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tsnft"]
+texture = ExtResource("8_0y7yq")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_guwo0"]
 texture = ExtResource("4_688ab")
@@ -106,11 +106,11 @@ texture = ExtResource("4_688ab")
 texture = ExtResource("6_lbcjp")
 modulate_color = Color(0, 0, 0, 0)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tsnft"]
-texture = ExtResource("8_0y7yq")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1f34"]
+texture = ExtResource("1_ukbyw")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1ctd"]
-texture = ExtResource("2_iomk8")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwwpa"]
+texture = ExtResource("12_mfq5g")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_few2b"]
 texture = ExtResource("8_hlh66")
@@ -118,11 +118,11 @@ texture = ExtResource("8_hlh66")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvptj"]
 texture = ExtResource("9_32j5y")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwwpa"]
-texture = ExtResource("12_mfq5g")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1ctd"]
+texture = ExtResource("2_iomk8")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oh3d5"]
-texture = ExtResource("3_t3128")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4gwx"]
+texture = ExtResource("16_rs4dn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fos03"]
 texture = ExtResource("11_6gn30")
@@ -130,11 +130,11 @@ texture = ExtResource("11_6gn30")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6utu"]
 texture = ExtResource("12_3l85a")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4gwx"]
-texture = ExtResource("16_rs4dn")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oh3d5"]
+texture = ExtResource("3_t3128")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q84w8"]
-texture = ExtResource("4_bfif2")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52ney"]
+texture = ExtResource("20_c1vmu")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7ubs"]
 texture = ExtResource("14_sm2ma")
@@ -142,11 +142,11 @@ texture = ExtResource("14_sm2ma")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8jbb"]
 texture = ExtResource("15_mpbbv")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52ney"]
-texture = ExtResource("20_c1vmu")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q84w8"]
+texture = ExtResource("4_bfif2")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ddp0"]
-texture = ExtResource("5_o2uwe")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x47nj"]
+texture = ExtResource("23_jn0qa")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvctv"]
 texture = ExtResource("17_ocmyk")
@@ -154,11 +154,11 @@ texture = ExtResource("17_ocmyk")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhvax"]
 texture = ExtResource("18_hvtyd")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x47nj"]
-texture = ExtResource("23_jn0qa")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ddp0"]
+texture = ExtResource("5_o2uwe")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vnt2x"]
-texture = ExtResource("6_xca84")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akg2m"]
+texture = ExtResource("27_0hos0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4txhh"]
 texture = ExtResource("20_by87x")
@@ -166,11 +166,11 @@ texture = ExtResource("20_by87x")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02fld"]
 texture = ExtResource("21_3b2ub")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akg2m"]
-texture = ExtResource("27_0hos0")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vnt2x"]
+texture = ExtResource("6_xca84")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08dr6"]
-texture = ExtResource("35_tlsa5")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b2axp"]
+texture = ExtResource("36_chs54")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpmju"]
 texture = ExtResource("36_chs54")
@@ -178,8 +178,8 @@ texture = ExtResource("36_chs54")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3x83"]
 texture = ExtResource("35_tlsa5")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b2axp"]
-texture = ExtResource("36_chs54")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08dr6"]
+texture = ExtResource("35_tlsa5")
 
 [sub_resource type="GDScript" id="GDScript_ndlxl"]
 script/source = "extends Button
@@ -202,8 +202,8 @@ func OnPressed():
 			$\"../../MarginContainer/VBoxContainer/HBoxContainer2/AboutDev\".grab_focus()
 "
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6wfs"]
-texture = ExtResource("37_7p15u")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_757iy"]
+texture = ExtResource("38_hruud")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvvlk"]
 texture = ExtResource("38_hruud")
@@ -211,11 +211,11 @@ texture = ExtResource("38_hruud")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lwbub"]
 texture = ExtResource("37_7p15u")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_757iy"]
-texture = ExtResource("38_hruud")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6wfs"]
+texture = ExtResource("37_7p15u")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua0a5"]
-texture = ExtResource("39_sp8aa")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otgj8"]
+texture = ExtResource("40_5q3td")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwb76"]
 texture = ExtResource("40_5q3td")
@@ -223,14 +223,14 @@ texture = ExtResource("40_5q3td")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kfoor"]
 texture = ExtResource("37_7p15u")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otgj8"]
-texture = ExtResource("40_5q3td")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x34lt"]
-texture = ExtResource("35_tlsa5")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua0a5"]
+texture = ExtResource("39_sp8aa")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7ltb"]
 texture = ExtResource("36_chs54")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x34lt"]
+texture = ExtResource("35_tlsa5")
 
 [sub_resource type="GDScript" id="GDScript_p0qxc"]
 script/source = "extends Button
@@ -255,8 +255,8 @@ func OnPressed():
 
 [sub_resource type="Theme" id="Theme_f4wi2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vf46"]
-texture = ExtResource("42_dsk5b")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1blm6"]
+texture = ExtResource("43_nxmvf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_miuq3"]
 texture = ExtResource("43_nxmvf")
@@ -264,47 +264,47 @@ texture = ExtResource("43_nxmvf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llfng"]
 texture = ExtResource("43_nxmvf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1blm6"]
-texture = ExtResource("43_nxmvf")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vf46"]
+texture = ExtResource("42_dsk5b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gewyu"]
 texture = ExtResource("47_76j5l")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykaqi"]
-texture = ExtResource("46_pc2ta")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knlln"]
+texture = ExtResource("49_x4ml8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewc7t"]
 texture = ExtResource("48_wmrby")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knlln"]
-texture = ExtResource("49_x4ml8")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykaqi"]
+texture = ExtResource("46_pc2ta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0g62"]
 texture = ExtResource("45_m7c8j")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixugp"]
-texture = ExtResource("48_if04w")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jhfa"]
 texture = ExtResource("49_wlims")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhcws"]
-texture = ExtResource("51_ojjvt")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixugp"]
+texture = ExtResource("48_if04w")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4b6vr"]
 texture = ExtResource("52_ef3jk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nonmj"]
-texture = ExtResource("62_fshwl")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhcws"]
+texture = ExtResource("51_ojjvt")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02uji"]
 texture = ExtResource("63_b2rwa")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmn1u"]
-texture = ExtResource("64_1olel")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nonmj"]
+texture = ExtResource("62_fshwl")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q852u"]
 texture = ExtResource("65_tr2ig")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmn1u"]
+texture = ExtResource("64_1olel")
 
 [node name="Ui1StScene" type="Node3D"]
 
@@ -362,10 +362,10 @@ layout_mode = 2
 focus_neighbor_right = NodePath("../Continue")
 focus_neighbor_bottom = NodePath("../../VBoxContainer/Options")
 focus_next = NodePath("../Continue")
-theme_override_styles/normal = SubResource("StyleBoxTexture_h51h2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ko3wu")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ko3wu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ko3wu")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ko3wu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h51h2")
 script = SubResource("GDScript_qjiyf")
 
 [node name="Continue" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -376,11 +376,11 @@ focus_neighbor_right = NodePath("../New Game")
 focus_neighbor_bottom = NodePath("../../VBoxContainer/Options")
 focus_next = NodePath("../New Game")
 focus_previous = NodePath("../Level Select")
-theme_override_styles/normal = SubResource("StyleBoxTexture_g1f34")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tsnft")
+theme_override_styles/disabled = ExtResource("7_hrtdn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_guwo0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_mo0fi")
-theme_override_styles/disabled = ExtResource("7_hrtdn")
-theme_override_styles/focus = SubResource("StyleBoxTexture_tsnft")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g1f34")
 script = ExtResource("9_nxv4x")
 
 [node name="New Game" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -391,10 +391,10 @@ focus_neighbor_right = NodePath("../../../../HBoxContainer/Skin")
 focus_neighbor_bottom = NodePath("../../VBoxContainer/Options")
 focus_next = NodePath("../../VBoxContainer/Options")
 focus_previous = NodePath("../Continue")
-theme_override_styles/normal = SubResource("StyleBoxTexture_a1ctd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_iwwpa")
 theme_override_styles/hover = SubResource("StyleBoxTexture_few2b")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lvptj")
-theme_override_styles/focus = SubResource("StyleBoxTexture_iwwpa")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a1ctd")
 script = ExtResource("14_opp1x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/MarginContainer/VBoxContainer"]
@@ -408,10 +408,10 @@ focus_neighbor_right = NodePath("../../../../HBoxContainer/Skin")
 focus_neighbor_bottom = NodePath("../../HBoxContainer2/Quit")
 focus_next = NodePath("../../HBoxContainer2/Quit")
 focus_previous = NodePath("../../HBoxContainer/New Game")
-theme_override_styles/normal = SubResource("StyleBoxTexture_oh3d5")
+theme_override_styles/focus = SubResource("StyleBoxTexture_m4gwx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fos03")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w6utu")
-theme_override_styles/focus = SubResource("StyleBoxTexture_m4gwx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oh3d5")
 script = ExtResource("19_hepjx")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/CanvasLayer/MarginContainer/VBoxContainer"]
@@ -424,10 +424,10 @@ focus_neighbor_top = NodePath("../../VBoxContainer/Options")
 focus_neighbor_right = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../../VBoxContainer/Options")
-theme_override_styles/normal = SubResource("StyleBoxTexture_q84w8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_52ney")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t7ubs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n8jbb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_52ney")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q84w8")
 script = ExtResource("23_6n15o")
 
 [node name="Quit" type="Button" parent="UI/CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
@@ -437,10 +437,10 @@ focus_neighbor_top = NodePath("../../VBoxContainer/Options")
 focus_neighbor_right = NodePath("../../../../HBoxContainer/Skin")
 focus_next = NodePath("../../../../HBoxContainer/Skin")
 focus_previous = NodePath("../AboutDev")
-theme_override_styles/normal = SubResource("StyleBoxTexture_5ddp0")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x47nj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dvctv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qhvax")
-theme_override_styles/focus = SubResource("StyleBoxTexture_x47nj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5ddp0")
 script = ExtResource("27_f8ge0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer"]
@@ -461,10 +461,10 @@ custom_minimum_size = Vector2(335, 0)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../MarginContainer/VBoxContainer/HBoxContainer2/Quit")
 focus_previous = NodePath("../../MarginContainer/VBoxContainer/HBoxContainer2/Quit")
-theme_override_styles/normal = SubResource("StyleBoxTexture_vnt2x")
+theme_override_styles/focus = SubResource("StyleBoxTexture_akg2m")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4txhh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_02fld")
-theme_override_styles/focus = SubResource("StyleBoxTexture_akg2m")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vnt2x")
 
 [node name="ProjectLogo" type="Sprite2D" parent="UI/CanvasLayer"]
 position = Vector2(510, 144)
@@ -484,10 +484,10 @@ offset_right = 1312.0
 offset_bottom = -710.0
 focus_neighbor_bottom = NodePath("../Developer")
 focus_next = NodePath("../Developer")
-theme_override_styles/normal = SubResource("StyleBoxTexture_08dr6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_b2axp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wpmju")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_k3x83")
-theme_override_styles/focus = SubResource("StyleBoxTexture_b2axp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_08dr6")
 script = SubResource("GDScript_ndlxl")
 
 [node name="Developer" type="Button" parent="UI/CanvasLayer/Pannel2"]
@@ -500,10 +500,10 @@ focus_neighbor_top = NodePath("../Exit")
 focus_neighbor_bottom = NodePath("../GameProject")
 focus_next = NodePath("../GameProject")
 focus_previous = NodePath("../Exit")
-theme_override_styles/normal = SubResource("StyleBoxTexture_l6wfs")
+theme_override_styles/focus = SubResource("StyleBoxTexture_757iy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mvvlk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lwbub")
-theme_override_styles/focus = SubResource("StyleBoxTexture_757iy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l6wfs")
 
 [node name="GameProject" type="Button" parent="UI/CanvasLayer/Pannel2"]
 custom_minimum_size = Vector2(2800, 230)
@@ -513,10 +513,10 @@ offset_right = 1330.0
 offset_bottom = 250.0
 focus_neighbor_top = NodePath("../Developer")
 focus_previous = NodePath("../Developer")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ua0a5")
+theme_override_styles/focus = SubResource("StyleBoxTexture_otgj8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fwb76")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_kfoor")
-theme_override_styles/focus = SubResource("StyleBoxTexture_otgj8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ua0a5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer"]
 offset_left = 256.0
@@ -535,10 +535,10 @@ offset_left = 1275.0
 offset_top = -707.5
 offset_right = 1425.0
 offset_bottom = -557.5
-theme_override_styles/normal = SubResource("StyleBoxTexture_x34lt")
+theme_override_styles/focus = SubResource("StyleBoxTexture_t7ltb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t7ltb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t7ltb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_t7ltb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x34lt")
 script = SubResource("GDScript_p0qxc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/VBoxContainer"]
@@ -561,10 +561,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
 theme = SubResource("Theme_f4wi2")
-theme_override_styles/normal = SubResource("StyleBoxTexture_2vf46")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1blm6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_miuq3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_llfng")
-theme_override_styles/focus = SubResource("StyleBoxTexture_1blm6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2vf46")
 
 [node name="V-sync" type="HBoxContainer" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -593,12 +593,12 @@ custom_minimum_size = Vector2(250, 70)
 layout_mode = 2
 theme = ExtResource("45_meru3")
 theme_override_styles/focus = SubResource("StyleBoxTexture_gewyu")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ykaqi")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_knlln")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gewyu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ewc7t")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gewyu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ewc7t")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_knlln")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ewc7t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ykaqi")
 script = ExtResource("52_xkfsj")
 
 [node name="FullScreen" type="HBoxContainer" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -617,10 +617,10 @@ script = ExtResource("53_svuon")
 [node name="Control settings" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_k0g62")
+theme_override_styles/focus = ExtResource("46_btfil")
 theme_override_styles/hover = ExtResource("46_btfil")
 theme_override_styles/pressed = ExtResource("46_btfil")
-theme_override_styles/focus = ExtResource("46_btfil")
+theme_override_styles/normal = SubResource("StyleBoxTexture_k0g62")
 
 [node name="Controls" type="HBoxContainer" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -636,10 +636,10 @@ offset_left = -353.333
 offset_top = -880.0
 offset_right = 346.667
 offset_bottom = -730.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_ixugp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7jhfa")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7jhfa")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7jhfa")
-theme_override_styles/focus = SubResource("StyleBoxTexture_7jhfa")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ixugp")
 
 [node name="KeyboardControls" type="Sprite2D" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/Controls"]
 position = Vector2(815, 270)
@@ -652,10 +652,10 @@ offset_left = -366.667
 offset_top = -923.333
 offset_right = 333.333
 offset_bottom = -673.333
-theme_override_styles/normal = SubResource("StyleBoxTexture_uhcws")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4b6vr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4b6vr")
-theme_override_styles/focus = SubResource("StyleBoxTexture_4b6vr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uhcws")
 
 [node name="Button" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/Controls"]
 custom_minimum_size = Vector2(0, 570)
@@ -664,15 +664,15 @@ layout_mode = 2
 [node name="Help" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_nonmj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_02uji")
 theme_override_styles/hover = SubResource("StyleBoxTexture_02uji")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_02uji")
-theme_override_styles/focus = SubResource("StyleBoxTexture_02uji")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nonmj")
 
 [node name="Button" type="Button" parent="UI/CanvasLayer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 80)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_rmn1u")
+theme_override_styles/focus = SubResource("StyleBoxTexture_q852u")
 theme_override_styles/hover = SubResource("StyleBoxTexture_q852u")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q852u")
-theme_override_styles/focus = SubResource("StyleBoxTexture_q852u")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmn1u")

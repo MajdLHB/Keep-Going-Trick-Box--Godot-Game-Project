@@ -19,11 +19,11 @@
 Button/styles/hover = null
 Button/styles/pressed = null
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1r1at"]
-texture = ExtResource("3_kj5eq")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wojj4"]
 texture = ExtResource("4_pg52t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1r1at"]
+texture = ExtResource("3_kj5eq")
 
 [sub_resource type="GDScript" id="GDScript_o0vhm"]
 script/source = "extends Button
@@ -53,22 +53,22 @@ func OnPressed():
 
 [sub_resource type="Theme" id="Theme_s4pbw"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbb4f"]
-texture = ExtResource("5_kucmv")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b7hs"]
 texture = ExtResource("6_3k5wf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4j3x"]
 texture = ExtResource("6_3k5wf")
 
-[sub_resource type="Theme" id="Theme_cswj4"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbb4f"]
+texture = ExtResource("5_kucmv")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v01em"]
-texture = ExtResource("7_kcyoh")
+[sub_resource type="Theme" id="Theme_cswj4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_domkh"]
 texture = ExtResource("8_lygci")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v01em"]
+texture = ExtResource("7_kcyoh")
 
 [sub_resource type="GDScript" id="GDScript_gmw8e"]
 script/source = "extends Button
@@ -85,14 +85,14 @@ func OnPressed():
 
 [sub_resource type="Theme" id="Theme_4731r"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qiqpl"]
-texture = ExtResource("9_bci7m")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlvvh"]
 texture = ExtResource("10_k6elp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6yot"]
 texture = ExtResource("10_k6elp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qiqpl"]
+texture = ExtResource("9_bci7m")
 
 [node name="PauseMenu" type="Node2D"]
 script = ExtResource("1_ae8qs")
@@ -119,10 +119,10 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../Options")
 focus_next = NodePath("../Options")
 theme = SubResource("Theme_5xjoo")
-theme_override_styles/normal = SubResource("StyleBoxTexture_1r1at")
+theme_override_styles/focus = ExtResource("5_364em")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wojj4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wojj4")
-theme_override_styles/focus = ExtResource("5_364em")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1r1at")
 script = SubResource("GDScript_o0vhm")
 
 [node name="Options" type="Button" parent="CanvasLayer/VBoxContainer"]
@@ -133,10 +133,10 @@ focus_neighbor_bottom = NodePath("../Main Menu")
 focus_next = NodePath("../Main Menu")
 focus_previous = NodePath("../Continue")
 theme = SubResource("Theme_s4pbw")
-theme_override_styles/normal = SubResource("StyleBoxTexture_pbb4f")
+theme_override_styles/focus = ExtResource("5_364em")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0b7hs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w4j3x")
-theme_override_styles/focus = ExtResource("5_364em")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pbb4f")
 script = ExtResource("7_x2wxl")
 
 [node name="Main Menu" type="Button" parent="CanvasLayer/VBoxContainer"]
@@ -147,10 +147,10 @@ focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Options")
 theme = SubResource("Theme_cswj4")
-theme_override_styles/normal = SubResource("StyleBoxTexture_v01em")
+theme_override_styles/focus = ExtResource("5_364em")
 theme_override_styles/hover = SubResource("StyleBoxTexture_domkh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_domkh")
-theme_override_styles/focus = ExtResource("5_364em")
+theme_override_styles/normal = SubResource("StyleBoxTexture_v01em")
 script = SubResource("GDScript_gmw8e")
 
 [node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
@@ -159,10 +159,10 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../Main Menu")
 focus_previous = NodePath("../Main Menu")
 theme = SubResource("Theme_4731r")
-theme_override_styles/normal = SubResource("StyleBoxTexture_qiqpl")
+theme_override_styles/focus = ExtResource("5_364em")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mlvvh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t6yot")
-theme_override_styles/focus = ExtResource("5_364em")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qiqpl")
 script = ExtResource("11_h5dpo")
 
 [node name="VBoxContainer2" parent="CanvasLayer" instance=ExtResource("13_oscqw")]
