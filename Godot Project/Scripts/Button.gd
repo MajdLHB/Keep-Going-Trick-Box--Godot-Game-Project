@@ -36,4 +36,3 @@ func _OnAreaExited(area):
 	elif ObjectsInTheArea > 0:
 		$MeshInstance3D.transform.origin = Pressed_Position
 		emit_signal("OpenDoor")	
-

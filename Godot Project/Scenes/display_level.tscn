@@ -19,9 +19,6 @@ func _ready():
 	print(\"1st level \" + str(SceneManager.FirstLevelIndex))
 	var LvelNum = SaveManager.Level 
 	self.text = \"Level \" + str(LvelNum - 1)
-
-
-
 "
 
 [sub_resource type="Animation" id="Animation_327ux"]

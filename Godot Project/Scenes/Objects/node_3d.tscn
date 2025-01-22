@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://563m55gx0ild"]
+[gd_scene load_steps=4 format=3 uid="uid://563m55gx0ild"]
+
+[ext_resource type="Material" uid="uid://dw44bojmeucsk" path="res://Materiels/Ground.tres" id="1_7hvyh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2k7hu"]
+material = ExtResource("1_7hvyh")
+size = Vector3(1.5, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fuhqm"]
+size = Vector3(1.5, 1, 2)
 
 [node name="Node3D" type="Node3D"]
 

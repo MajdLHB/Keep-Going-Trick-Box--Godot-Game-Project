@@ -70,4 +70,3 @@ func _physics_process(delta):
 			Exited = false
 			EntereToSecondArea = false
 			SceneManager._Load(SceneManager.CurrentIndex)
-
