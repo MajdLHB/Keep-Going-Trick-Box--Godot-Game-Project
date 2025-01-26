@@ -35,6 +35,8 @@ Instructions for installing and running the game will be provided once the game 
 ![image1](https://github.com/user-attachments/assets/bbf1490b-70bf-4fb4-ae38-bf345a9e1032)
 ![image2](https://github.com/user-attachments/assets/816a99ef-8a7c-4c00-92e6-c16c333b9b52)
 ![image3](https://github.com/user-attachments/assets/2f54f287-7e01-44bb-a676-2ea81c724c3f)
+![image4](https://github.com/user-attachments/assets/68abd420-c2e2-4c60-b043-37b0e16472e1)
+
 
 ## Contributing
 Contributions are welcome! Feel free to fork this repository and submit pull requests.
