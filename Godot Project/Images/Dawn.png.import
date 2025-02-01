@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq7p8oho1i4c1"
 path.s3tc="res://.godot/imported/Dawn.png-09b067d406d363ead398e262cce658cb.s3tc.ctex"
+path.etc2="res://.godot/imported/Dawn.png-09b067d406d363ead398e262cce658cb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Dawn.png"
-dest_files=["res://.godot/imported/Dawn.png-09b067d406d363ead398e262cce658cb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Dawn.png-09b067d406d363ead398e262cce658cb.s3tc.ctex", "res://.godot/imported/Dawn.png-09b067d406d363ead398e262cce658cb.etc2.ctex"]
 
 [params]
 

@@ -71,11 +71,11 @@ material = SubResource("StandardMaterial3D_jy0ay")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uicy5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n5xo"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t32x4"]
 albedo_color = Color(0.152941, 1, 0.12549, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fq00q"]
-material = SubResource("StandardMaterial3D_7n5xo")
+material = SubResource("StandardMaterial3D_t32x4")
 
 [node name="Level" type="Node3D"]
 

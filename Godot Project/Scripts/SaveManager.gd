@@ -11,6 +11,7 @@ var PlayerData = {
 func _init():
 	var UserDoccuments = OS.get_user_data_dir()
 	SaveFile = UserDoccuments + "/SaveData.json"
+	print(SaveFile)
 	if FileAccess.file_exists(SaveFile):
 		SaveFile = SaveFile
 	else:

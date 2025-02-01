@@ -140,6 +140,13 @@ theme = ExtResource("4_avijs")
 text = "Level 4"
 script = ExtResource("6_nvk65")
 
+[node name="Level5" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(285, 0)
+layout_mode = 2
+theme = ExtResource("4_avijs")
+text = "Level 5"
+script = ExtResource("6_nvk65")
+
 [node name="Button" type="Button" parent="CanvasLayer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2

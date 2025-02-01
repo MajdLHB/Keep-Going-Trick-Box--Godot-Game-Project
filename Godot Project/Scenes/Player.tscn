@@ -21,17 +21,17 @@ material = SubResource("StandardMaterial3D_hoc5k")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vstrh"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqcel"]
-texture = ExtResource("7_47gwu")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd0ks"]
 texture = ExtResource("8_l287r")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc3n1"]
-texture = ExtResource("10_xqn0q")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqcel"]
+texture = ExtResource("7_47gwu")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ik3e7"]
 texture = ExtResource("11_5ueht")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc3n1"]
+texture = ExtResource("10_xqn0q")
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_mpe8m")
@@ -48,6 +48,7 @@ shape = SubResource("BoxShape3D_vstrh")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Joystick" type="CanvasLayer" parent="Node2D"]
+visible = false
 
 [node name="JoystickButton" type="Sprite2D" parent="Node2D/Joystick"]
 position = Vector2(203.7, 885.8)
@@ -71,25 +72,27 @@ offset_bottom = 997.0
 script = ExtResource("6_owrdk")
 
 [node name="Jump" type="Button" parent="Node2D"]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 offset_left = 1568.0
 offset_top = 727.0
 offset_right = 1668.0
 offset_bottom = 827.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_pqcel")
 theme_override_styles/hover = SubResource("StyleBoxTexture_sd0ks")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sd0ks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pqcel")
 script = ExtResource("9_pxj38")
 
 [node name="Button" type="Button" parent="Node2D"]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 offset_right = 8.0
 offset_bottom = 8.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_nc3n1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ik3e7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ik3e7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nc3n1")
 script = ExtResource("12_qp3rc")
 
 [connection signal="button_down" from="Node2D/Joystick/Joystick" to="Node2D/Joystick/JoystickButton" method="_on_joystick_button_down"]

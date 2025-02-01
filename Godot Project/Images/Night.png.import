@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://clubmix0wy08y"
 path.s3tc="res://.godot/imported/Night.png-b73a5e5b0f5f13c58838b250f18414c5.s3tc.ctex"
+path.etc2="res://.godot/imported/Night.png-b73a5e5b0f5f13c58838b250f18414c5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Night.png"
-dest_files=["res://.godot/imported/Night.png-b73a5e5b0f5f13c58838b250f18414c5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Night.png-b73a5e5b0f5f13c58838b250f18414c5.s3tc.ctex", "res://.godot/imported/Night.png-b73a5e5b0f5f13c58838b250f18414c5.etc2.ctex"]
 
 [params]
 
